@@ -1,10 +1,7 @@
 # %%Import des libraires
 import streamlit as st
 import pandas as pd
-import datetime as dt
 import plotly.express as px
-import matplotlib.pyplot as plt
-import re
 import os
 
 # %% Load data
