@@ -125,7 +125,7 @@ with st.sidebar:
     options = st.sidebar.radio(
         "Navigation :",
         [
-            "Données",
+            "Contexte",
             "Indisponibilités par mois",
             "Typologie des indisponibilités",
             "Indisponibilités par ligne",
@@ -155,9 +155,9 @@ df2["situation"] = df2["situation"].str.replace("int", "Int", regex=False)
 # %% Merge dataframes
 df_merged = pd.merge(df_selected_year, df2, how="inner", left_on="id", right_on="id")
 
-# %% Onglet 1 : Données
-if options == "Données":
-    st.title("Données")
+# %% Onglet 1 : Contexte
+if options == "Contexte":
+    st.title("Contexte")
     st.write(
         "Cette application a pour but d'exploiter les fichiers de points marquants "
         "et de les croiser avec les caractéristiques des ascenseurs et escaliers."
