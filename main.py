@@ -137,6 +137,7 @@ with st.sidebar:
             "Patrimoine",
             "Croisement données",
             "Scraping",
+            "Classification",
         ],
     )
 
@@ -191,46 +192,97 @@ if options == "Données":
 # %% Onglet 1 bis : Indisponibilités par mois
 if options == "Indisponibilités par mois":
     st.title("Indisponibilités par mois")
-    st.write(
-        "Ajouter graphique de la répartition des indisponibilités par mois avec sélecteur période temporelle, ligne, type d'équipement"
-    )
 
     df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-    df_filtered["mois"] = pd.to_datetime(df_filtered["date_debut_panne"]).dt.month()
-    df_grouped = df_filtered.groupby("mois")["duree_indispo"].sum().reset_index()
+    df_filtered["mois"] = pd.to_datetime(
+        df_filtered["date_debut_panne"], format="%d/%m/%Y"
+    ).dt.month
+    df_filtered["year"] = pd.to_datetime(
+        df_filtered["date_debut_panne"], format="%d/%m/%Y"
+    ).dt.year
 
-    # Multiselect mois
-    mois_list = st.multiselect(
-        "Sélectionner un ou plusieurs mois",
-        df_filtered["mois"].unique(),
-        default=df_filtered["mois"].unique(),
+    q75 = df_filtered["duree_indispo"].quantile(0.75)
+    df_filtered_q75 = df_filtered[df_filtered["duree_indispo"] <= q75]
+
+    year_list = st.selectbox(
+        "Sélectionner une année",
+        sorted(df_filtered["year"].unique(), reverse=True),
+        index=0,
     )
-
-    # multiselect ligne
     ligne_list = st.multiselect(
         "Sélectionner une ou plusieurs lignes",
-        df_filtered["ligne"].unique(),
-        default=df_filtered["ligne"].unique(),
+        ["A", "B", "C", "D", "F", "T1", "T4"],
+        default=["A", "B", "C", "D", "F", "T1", "T4"],
     )
-
-    # Multiselect type d'équipement
     type_equipement_list = st.multiselect(
         "Sélectionner un ou plusieurs types d'équipement",
         df_filtered["type_equipement"].unique(),
         default=df_filtered["type_equipement"].unique(),
     )
 
-    # Plot the data
-    fig = px.bar(
-        df_grouped,
-        x="mois",
-        y="duree_indispo",
-        title="Durée totale d'indisponibilités par mois",
-        labels={"mois": "Mois", "duree_indispo": "Durée totale (heures)"},
-        category_orders={"mois": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]},
-        color_discrete_sequence=["#636EFA"],
+    custom_colors = {
+        "A": "red",
+        "B": "blue",
+        "C": "orange",
+        "D": "green",
+        "F": "lightgreen",
+        "T1": "purple",
+        "T4": "darkviolet",
+    }
+    month_names = [
+        "Janvier",
+        "Fevrier",
+        "Mars",
+        "Avril",
+        "Mai",
+        "Juin",
+        "Juillet",
+        "Aout",
+        "Septembre",
+        "Octobre",
+        "Novembre",
+        "Decembre",
+    ]
+
+    def plot_data(data, title):
+        fig = px.bar(
+            data.loc[
+                (data["year"] == year_list)
+                & (data["ligne"].isin(ligne_list))
+                & (data["type_equipement"].isin(type_equipement_list))
+            ],
+            x="mois",
+            y="duree_indispo",
+            color="ligne",
+            title=title,
+            labels={
+                "mois": "Mois",
+                "duree_indispo": "Durée totale (heures)",
+                "ligne": "Ligne",
+            },
+            category_orders={
+                "mois": list(range(1, 13)),
+                "ligne": ["A", "B", "C", "D", "F", "T1", "T4"],
+            },
+            barmode="group",
+            color_discrete_map=custom_colors,
+        )
+        fig.update_layout(
+            xaxis=dict(
+                tickmode="array", tickvals=list(range(1, 13)), ticktext=month_names
+            ),
+            xaxis_title=None,
+        )
+        st.plotly_chart(fig)
+
+    plot_data(
+        df_filtered,
+        f"Durée totale d'indisponibilités par mois en {year_list} - toutes données",
     )
-    st.plotly_chart(fig)
+    plot_data(
+        df_filtered_q75,
+        f"Durée totale d'indisponibilités par mois en {year_list} - filtrées (durée indisponibilité <= q75)",
+    )
 
 # %% Onglet 2 : Typologie des indisponibilités
 if options == "Typologie des indisponibilités":
@@ -243,16 +295,15 @@ if options == "Typologie des indisponibilités":
     # %% Travail en nombre d'indisponibilités
     st.subheader("Analyses en nombre d'indisponibilités")
 
-    st.write(
-        "**Lecture des graphiques :** à gauche on conserve l'ensemble des données,"
-        " à droite on filtre les données pour ne garder que celles avec une durée d'indisponibilité non nulle i.e. "
-        "disposant d'une heure de début et de fin d'indisponibilité."
-    )
-
-    st.markdown(
-        "<span style='color:red; font-weight:bold;'>Attention problèmes matching couleurs pie charts</span>",
-        unsafe_allow_html=True,
-    )
+    custom_order = [
+        "Non spécifié",
+        "Panne",
+        "Usure",
+        "Mauvaise utilisation",
+        "Vandalisme",
+        "Amélioration",
+        "****",
+    ]
 
     col1, col2 = st.columns(2)
 
@@ -261,11 +312,20 @@ if options == "Typologie des indisponibilités":
             df_selected_year.groupby("motifs", dropna=False)
             .size()
             .reset_index(name="count")
-            .sort_values(by="count", ascending=False)
         )
 
-        # Replace NaN values in 'motifs' with a label for better visualization
-        df_grouped["motifs"] = df_grouped["motifs"].fillna("Non spécifié")
+        # Replace NaN and None values in 'motifs' with "Non spécifié"
+        df_grouped["motifs"] = (
+            df_grouped["motifs"]
+            .fillna("Non spécifié")
+            .replace([None, pd.NA], "Non spécifié")
+        )
+
+        # Apply custom order
+        df_grouped["motifs"] = pd.Categorical(
+            df_grouped["motifs"], categories=custom_order, ordered=True
+        )
+        df_grouped = df_grouped.sort_values(by="motifs")
 
         fig = px.bar(
             df_grouped,
@@ -275,7 +335,7 @@ if options == "Typologie des indisponibilités":
             labels={"motifs": "Motif", "count": "Nombre d'indisponibilités"},
         )
         fig.update_layout(xaxis_title="Motif", yaxis_title=None)
-        fig
+        st.plotly_chart(fig)
 
     with col2:
         fig = px.pie(
@@ -285,22 +345,25 @@ if options == "Typologie des indisponibilités":
             labels={"motifs": "Motif", "count": "Nombre d'indisponibilités"},
         )
         fig.update_traces(textinfo="percent+label")
-        fig
+        st.plotly_chart(fig)
 
     col1, col2 = st.columns(2)
 
     with col1:
-        # Filter the dataframe to keep only the rows with non-null duration
+        # Filter the dataframe to keep only rows with non-null duration
         df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
         df_grouped = (
-            df_filtered.groupby("motifs", dropna=False)
-            .size()
-            .reset_index(name="count")
-            .sort_values(by="count", ascending=False)
+            df_filtered.groupby("motifs", dropna=False).size().reset_index(name="count")
         )
 
-        # Replace NaN values in 'motifs' with a label for better visualization
+        # Replace NaN and None values in 'motifs' with "Non spécifié"
         df_grouped["motifs"] = df_grouped["motifs"].fillna("Non spécifié")
+
+        # Apply custom order
+        df_grouped["motifs"] = pd.Categorical(
+            df_grouped["motifs"], categories=custom_order, ordered=True
+        )
+        df_grouped = df_grouped.sort_values(by="motifs")
 
         fig = px.bar(
             df_grouped,
@@ -310,7 +373,7 @@ if options == "Typologie des indisponibilités":
             labels={"motifs": "Motif", "count": "Nombre d'indisponibilités"},
         )
         fig.update_layout(xaxis_title="Motif", yaxis_title=None)
-        fig
+        st.plotly_chart(fig)
 
     with col2:
         fig = px.pie(
@@ -320,7 +383,7 @@ if options == "Typologie des indisponibilités":
             labels={"motifs": "Motif", "count": "Nombre d'indisponibilités"},
         )
         fig.update_traces(textinfo="percent+label")
-        fig
+        st.plotly_chart(fig)
 
     # %% Travail en heures d'indisponibilités
     st.subheader("Analyses en heure d'indisponibilités")
@@ -372,161 +435,121 @@ if options == "Indisponibilités par ligne":
     # %% Travail en nombre d'indisponibilités
     st.subheader("Analyses en nombre d'indisponibilités")
 
-    st.write(
-        "**Lecture des graphiques :** à gauche on conserve l'ensemble des données,"
-        " à droite on filtre les données pour ne garder que celles avec une durée d'indisponibilité non nulle i.e. "
-        "disposant d'une heure de début et de fin d'indisponibilité."
-    )
+    custom_order_ligne = ["A", "B", "C", "D", "F", "T1", "T4", "P+R", "Non spécifié"]
+    custom_colors = {
+        "A": "red",
+        "B": "blue",
+        "C": "orange",
+        "D": "green",
+        "F": "lightgreen",
+        "T1": "purple",
+        "T4": "darkviolet",
+        "P+R": "pink",
+        "Non spécifié": "gray",
+    }
 
-    st.markdown(
-        "<span style='color:red; font-weight:bold;'>Attention code couleur des lignes à rajouter</span>",
-        unsafe_allow_html=True,
-    )
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        df_grouped = (
-            df_selected_year.groupby("ligne", dropna=False)
+    def plot_indisponibilites(data, title):
+        data["ligne"] = data["ligne"].fillna("Non spécifié")
+        data["ligne"] = pd.Categorical(
+            data["ligne"], categories=custom_order_ligne, ordered=True
+        )
+        grouped = (
+            data.groupby("ligne")
             .size()
             .reset_index(name="count")
             .sort_values(by="count", ascending=False)
         )
 
-        # Replace NaN values in 'motifs' with a label for better visualization
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
+        col1, col2 = st.columns(2)
+        with col1:
+            fig = px.bar(
+                grouped,
+                x="ligne",
+                y="count",
+                title=title,
+                labels={"ligne": "Ligne", "count": "Nombre d'indisponibilités"},
+                color="ligne",
+                color_discrete_map=custom_colors,
+            )
+            fig.update_layout(xaxis_title="Ligne", yaxis_title=None)
+            st.plotly_chart(fig)
+        with col2:
+            fig = px.pie(
+                grouped,
+                names="ligne",
+                values="count",
+                labels={"ligne": "Ligne", "count": "Nombre d'indisponibilités"},
+                color="ligne",
+                color_discrete_map=custom_colors,
+            )
+            fig.update_traces(textinfo="percent+label")
+            st.plotly_chart(fig)
 
-        fig = px.bar(
-            df_grouped,
-            x="ligne",
-            y="count",
-            title="Données brutes",
-            labels={"ligne": "Ligne", "count": "Nombre d'indisponibilités"},
-        )
-        fig.update_layout(xaxis_title="Ligne", yaxis_title=None)
-        fig
+    plot_indisponibilites(df_selected_year, "Données brutes")
+    plot_indisponibilites(
+        df_selected_year[df_selected_year["duree_indispo"].notnull()],
+        "Données filtrées (durée indisponibilité non nulle)",
+    )
 
-    with col2:
-        fig = px.pie(
-            df_grouped,
-            names="ligne",
-            values="count",
-            labels={"ligne": "Ligne", "count": "Nombre d'indisponibilités"},
-        )
-        fig.update_traces(textinfo="percent+label")
-        fig
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        # Filter the dataframe to keep only the rows with non-null duration
-        df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-        df_grouped = (
-            df_filtered.groupby("ligne", dropna=False)
-            .size()
-            .reset_index(name="count")
-            .sort_values(by="count", ascending=False)
-        )
-
-        # Replace NaN values in 'motifs' with a label for better visualization
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
-
-        fig = px.bar(
-            df_grouped,
-            x="ligne",
-            y="count",
-            title="Données filtrées",
-            labels={"ligne": "Ligne", "count": "Nombre d'indisponibilités"},
-        )
-        fig.update_layout(xaxis_title="Motif", yaxis_title=None)
-        fig
-
-    with col2:
-        fig = px.pie(
-            df_grouped,
-            names="ligne",
-            values="count",
-            labels={"ligne": "Ligne", "count": "Nombre d'indisponibilités"},
-        )
-        fig.update_traces(textinfo="percent+label")
-        fig
-
-    # %% Travail en heures d'indisponibilités²
+    # %% Travail en heures d'indisponibilités
     st.subheader("Analyses en heures d'indisponibilités")
 
     df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-
-    # Replace None values in 'ligne' with "non spécifié"
     df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
 
-    df_grouped = (
-        df_filtered.groupby("ligne")["duree_indispo"]
-        .sum()
-        .reset_index(name="count")
-        .sort_values(by="count", ascending=False)
-    )
+    custom_order_ligne = ["A", "B", "C", "D", "F", "T1", "T4", "P+R", "Non spécifié"]
+    custom_colors = {
+        "A": "red",
+        "B": "blue",
+        "C": "orange",
+        "D": "green",
+        "F": "lightgreen",
+        "T1": "purple",
+        "T4": "darkviolet",
+        "P+R": "pink",
+        "Non spécifié": "gray",
+    }
 
-    col1, col2 = st.columns(2)
-
-    with col1:
-        fig = px.bar(
-            df_grouped,
-            x="ligne",
-            y="count",
-            title="Durée d'indisponibilités par ligne - données non filtrées",
-            labels={"ligne": "Ligne", "count": "Heures d'indisponibilités"},
+    def plot_indisponibilites(data, title_suffix):
+        data_grouped = (
+            data.groupby("ligne")["duree_indispo"]
+            .sum()
+            .reset_index(name="count")
+            .sort_values(by="count", ascending=False)
         )
-        fig.update_layout(xaxis_title="Ligne", yaxis_title="Durée (h)")
-        st.plotly_chart(fig)
-
-    with col2:
-        fig = px.pie(
-            df_grouped,
-            names="ligne",
-            values="count",
-            labels={"ligne": "Ligne", "count": "Heures d'indisponibilités"},
+        data_grouped["ligne"] = pd.Categorical(
+            data_grouped["ligne"], categories=custom_order_ligne, ordered=True
         )
-        fig.update_traces(textinfo="percent+label")
-        fig
+        col1, col2 = st.columns(2)
+        with col1:
+            fig = px.bar(
+                data_grouped,
+                x="ligne",
+                y="count",
+                title=f"Durée d'indisponibilités par ligne - {title_suffix}",
+                labels={"ligne": "Ligne", "count": "Heures d'indisponibilités"},
+                color="ligne",
+                color_discrete_map=custom_colors,
+            )
+            fig.update_layout(xaxis_title="Ligne", yaxis_title="Durée (h)")
+            st.plotly_chart(fig)
+        with col2:
+            fig = px.pie(
+                data_grouped,
+                names="ligne",
+                values="count",
+                labels={"ligne": "Ligne", "count": "Heures d'indisponibilités"},
+                color="ligne",
+                color_discrete_map=custom_colors,
+            )
+            fig.update_traces(textinfo="percent+label")
+            st.plotly_chart(fig)
 
-    col1, col2 = st.columns(2)
-
-    df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
+    plot_indisponibilites(df_filtered, "données non filtrées")
 
     q75 = df_filtered["duree_indispo"].quantile(0.75)
-
-    df_filtered = df_filtered[df_filtered["duree_indispo"] <= q75]
-
-    # Replace None values in 'ligne' with "non spécifié"
-    df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
-
-    df_grouped = (
-        df_filtered.groupby("ligne")["duree_indispo"]
-        .sum()
-        .reset_index(name="count")
-        .sort_values(by="count", ascending=False)
-    )
-
-    with col1:
-        fig = px.bar(
-            df_grouped,
-            x="ligne",
-            y="count",
-            title="Durée d'indisponibilités par ligne - données filtrées",
-            labels={"ligne": "Ligne", "count": "Heures d'indisponibilités"},
-        )
-        fig.update_layout(xaxis_title="Ligne", yaxis_title="Durée (h)")
-        st.plotly_chart(fig)
-
-    with col2:
-        fig = px.pie(
-            df_grouped,
-            names="ligne",
-            values="count",
-            labels={"ligne": "Ligne", "count": "Heures d'indisponibilités"},
-        )
-        fig.update_traces(textinfo="percent+label")
-        fig
+    df_filtered_q75 = df_filtered[df_filtered["duree_indispo"] <= q75]
+    plot_indisponibilites(df_filtered_q75, "données filtrées (<= q75)")
 
 # %% Onglet 3 : Indisponibilités par station
 if options == "Indisponibilités par station":
@@ -540,136 +563,86 @@ if options == "Indisponibilités par station":
     st.subheader("Analyses en nombre d'indisponibilités")
 
     st.write(
-        "**Lecture des graphiques :** à gauche on conserve l'ensemble des données,"
-        " à droite on filtre les données pour ne garder que celles avec une durée d'indisponibilité non nulle i.e. "
-        "disposant d'une heure de début et de fin d'indisponibilité."
+        "**Lecture des graphiques :** à gauche toutes les données, à droite uniquement celles avec une durée non nulle."
     )
 
-    st.markdown(
-        "<span style='color:red; font-weight:bold;'>Blabla éventuel</span>",
-        unsafe_allow_html=True,
-    )
+    custom_colors = {
+        "A": "red",
+        "B": "blue",
+        "C": "orange",
+        "D": "green",
+        "F": "lightgreen",
+        "T1": "purple",
+        "T4": "darkviolet",
+        "P+R": "pink",
+        "Non spécifié": "gray",
+    }
 
-    col1, col2 = st.columns(2)
-
-    with col1:
-        df_grouped = (
-            df_selected_year.groupby(["station", "ligne"], dropna=False)
-            .size()
-            .reset_index(name="count")
-        )
-
-        # Replace NaN values in 'station' and 'ligne' with a label for better visualization
-        df_grouped["station"] = df_grouped["station"].fillna("Non spécifié")
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
-
+    def plot_indisponibilites(data, title):
+        data["station"] = data["station"].fillna("Non spécifié")
+        data["ligne"] = data["ligne"].fillna("Non spécifié")
         fig = px.bar(
-            df_grouped,
+            data.groupby(["station", "ligne"]).size().reset_index(name="count"),
             x="station",
             y="count",
             color="ligne",
-            title="Données brutes",
+            title=title,
             labels={
                 "station": "Station",
                 "count": "Nombre d'indisponibilités",
                 "ligne": "Ligne",
             },
+            color_discrete_map=custom_colors,
         )
         fig.update_layout(xaxis_title="Station", yaxis_title=None, xaxis_tickangle=-45)
-        fig
+        st.plotly_chart(fig)
 
+    col1, col2 = st.columns(2)
+    with col1:
+        plot_indisponibilites(df_selected_year, "Données brutes")
     with col2:
-        # Filter the dataframe to keep only the rows with non-null duration
-        df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-        df_grouped = (
-            df_filtered.groupby(["station", "ligne"], dropna=False)
-            .size()
-            .reset_index(name="count")
+        plot_indisponibilites(
+            df_selected_year[df_selected_year["duree_indispo"].notnull()],
+            "Données filtrées",
         )
-
-        # Replace NaN values in 'station' and 'ligne' with a label for better visualization
-        df_grouped["station"] = df_grouped["station"].fillna("Non spécifié")
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
-
-        fig = px.bar(
-            df_grouped,
-            x="station",
-            y="count",
-            color="ligne",
-            title="Données filtrées",
-            labels={
-                "station": "Station",
-                "count": "Nombre d'indisponibilités",
-                "ligne": "Ligne",
-            },
-        )
-        fig.update_layout(
-            xaxis_title="Station", yaxis_title=None, xaxis_tickangle=-45
-        )  # Rotate x-axis labels
-        fig
     # %% Travail en heures d'indisponibilités
     st.subheader("Analyses en heures d'indisponibilités")
 
     df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-
-    # Replace None values in 'station' with "non spécifié"
     df_filtered["station"] = df_filtered["station"].fillna("Non spécifié")
     df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
 
-    df_grouped = (
-        df_filtered.groupby(["station", "ligne"])["duree_indispo"]
-        .sum()
-        .reset_index(name="count")
-    )
-
     q75 = df_filtered["duree_indispo"].quantile(0.75)
+    st.write(f"75% des indisponibilités durent **{q75:.2f} heures** ou moins.")
 
-    st.write(
-        f"Parmi l'ensemble des indisponibilités avec une heure de début et de fin, 75% durent : **{q75:.2f} heures** ou moins."
-    )
-    st.write(
-        f"On filtrera les données pour ne garder que celles avec une durée d'indisponibilité inférieure à {q75:.2f} heures."
-    )
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        fig = px.bar(
-            df_grouped,
-            x="station",
-            y="count",
-            color="ligne",
-            title="Durée d'indisponibilités par station - données non filtrées",
-            labels={"station": "Station", "count": "Heures d'indisponibilités"},
-        )
-        fig.update_layout(xaxis_title="Station", yaxis_title="Durée (h)")
-        st.plotly_chart(fig)
-
-    with col2:
-        df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-        df_filtered = df_filtered[df_filtered["duree_indispo"] <= q75]
-
-        # Replace None values in 'station' with "non spécifié"
-        df_filtered["station"] = df_filtered["station"].fillna("Non spécifié")
-        df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
-
-        df_grouped = (
-            df_filtered.groupby(["station", "ligne"])["duree_indispo"]
+    def plot_duration(data, title):
+        grouped = (
+            data.groupby(["station", "ligne"])["duree_indispo"]
             .sum()
             .reset_index(name="count")
         )
-
         fig = px.bar(
-            df_grouped,
+            grouped,
             x="station",
             y="count",
             color="ligne",
-            title="Durée d'indisponibilités par station - données filtrées",
+            title=title,
             labels={"station": "Station", "count": "Heures d'indisponibilités"},
+            color_discrete_map=custom_colors,
         )
         fig.update_layout(xaxis_title="Station", yaxis_title="Durée (h)")
         st.plotly_chart(fig)
 
+    col1, col2 = st.columns(2)
+    with col1:
+        plot_duration(
+            df_filtered, "Durée d'indisponibilités par station - données non filtrées"
+        )
+    with col2:
+        plot_duration(
+            df_filtered[df_filtered["duree_indispo"] <= q75],
+            "Durée d'indisponibilités par station - données filtrées",
+        )
 
 # %% Onglet 4 : Indisponibilités par équipement
 if options == "Indisponibilités par équipement":
@@ -683,445 +656,125 @@ if options == "Indisponibilités par équipement":
     st.header("Analyses en nombre d'indisponibilités")
 
     st.write(
-        "**Lecture des graphiques :** à gauche on conserve l'ensemble des données,"
-        " à droite on filtre les données pour ne garder que celles avec une durée d'indisponibilité non nulle i.e. "
-        "disposant d'une heure de début et de fin d'indisponibilité."
+        "**Lecture des graphiques :** à gauche toutes les données,"
+        " à droite uniquement celles avec une durée d'indisponibilité non nulle."
     )
 
-    st.markdown(
-        "<span style='color:red; font-weight:bold;'>Blabla éventuel</span>",
-        unsafe_allow_html=True,
+    type_equipement_list = st.multiselect(
+        "Sélectionner un ou plusieurs types d'équipement",
+        df_selected_year["type_equipement"].unique(),
+        default=df_selected_year["type_equipement"].unique(),
+        key="multiselect1",
     )
 
-    st.subheader("Tout équipement confondu")
+    custom_colors = {
+        "A": "red",
+        "B": "blue",
+        "C": "orange",
+        "D": "green",
+        "F": "lightgreen",
+        "T1": "purple",
+        "T4": "darkviolet",
+        "P+R": "pink",
+        "Non spécifié": "gray",
+    }
+
+    def plot_indisponibilites(data, title):
+        grouped = (
+            data[data["type_equipement"].isin(type_equipement_list)]
+            .groupby(["num_equip", "ligne"], dropna=False)
+            .size()
+            .reset_index(name="count")
+        )
+        grouped["num_equip"] = grouped["num_equip"].fillna("Non spécifié")
+        grouped["ligne"] = grouped["ligne"].fillna("Non spécifié")
+
+        fig = px.bar(
+            grouped,
+            x="num_equip",
+            y="count",
+            color="ligne",
+            title=title,
+            labels={
+                "num_equip": "Numéro d'équipement",
+                "count": "Nombre d'indisponibilités",
+                "ligne": "Ligne",
+            },
+            color_discrete_map=custom_colors,
+        )
+        fig.update_layout(
+            xaxis_title="Numéro d'équipement", yaxis_title=None, xaxis_tickangle=-45
+        )
+        st.plotly_chart(fig)
 
     col1, col2 = st.columns(2)
-
     with col1:
-        df_grouped = (
-            df_selected_year.groupby(["num_equip", "ligne"], dropna=False)
-            .size()
-            .reset_index(name="count")
-        )
-
-        # Replace NaN values in 'station' and 'ligne' with a label for better visualization
-        df_grouped["num_equip"] = df_grouped["num_equip"].fillna("Non spécifié")
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
-
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Données brutes",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Nombre d'indisponibilités",
-                "ligne": "Ligne",
-            },
-        )
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title=None,
-            xaxis_tickangle=-45,  # Rotate x-axis labels
-        )
-        fig
-
+        plot_indisponibilites(df_selected_year, "Données brutes")
     with col2:
-        # Filter the dataframe to keep only the rows with non-null duration
-        df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-
-        df_grouped = (
-            df_filtered.groupby(["num_equip", "ligne"], dropna=False)
-            .size()
-            .reset_index(name="count")
+        plot_indisponibilites(
+            df_selected_year[df_selected_year["duree_indispo"].notnull()],
+            "Données filtrées",
         )
-
-        # Replace NaN values in 'station' and 'ligne' with a label for better visualization
-        df_grouped["num_equip"] = df_grouped["num_equip"].fillna("Non spécifié")
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
-
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Données filtrées",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Nombre d'indisponibilités",
-                "ligne": "Ligne",
-            },
-        )
-
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title=None,
-            xaxis_tickangle=-45,  # Rotate x-axis labels
-        )
-        fig
-
-    st.subheader("Ascenseurs")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        df_asc = df_selected_year[df_selected_year["type_equipement"] == "ascenseur"]
-
-        df_grouped = (
-            df_asc.groupby(["num_equip", "ligne"], dropna=False)
-            .size()
-            .reset_index(name="count")
-        )
-
-        # Replace NaN values in 'station' and 'ligne' with a label for better visualization
-        df_grouped["num_equip"] = df_grouped["num_equip"].fillna("Non spécifié")
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
-
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Données brutes",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Nombre d'indisponibilités",
-                "ligne": "Ligne",
-            },
-        )
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title=None,
-            xaxis_tickangle=-45,  # Rotate x-axis labels
-        )
-        fig
-
-    with col2:
-        # Filter the dataframe to keep only the rows with non-null duration
-        df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-        df_filtered = df_filtered[df_filtered["type_equipement"] == "ascenseur"]
-
-        df_grouped = (
-            df_filtered.groupby(["num_equip", "ligne"], dropna=False)
-            .size()
-            .reset_index(name="count")
-        )
-
-        # Replace NaN values in 'station' and 'ligne' with a label for better visualization
-        df_grouped["num_equip"] = df_grouped["num_equip"].fillna("Non spécifié")
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
-
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Données filtrées",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Nombre d'indisponibilités",
-                "ligne": "Ligne",
-            },
-        )
-
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title=None,
-            xaxis_tickangle=-45,  # Rotate x-axis labels
-        )
-        fig
-
-    st.subheader("Escaliers")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        df_esc = df_selected_year[df_selected_year["type_equipement"] == "escalier"]
-
-        df_grouped = (
-            df_esc.groupby(["num_equip", "ligne"], dropna=False)
-            .size()
-            .reset_index(name="count")
-        )
-
-        # Replace NaN values in 'station' and 'ligne' with a label for better visualization
-        df_grouped["num_equip"] = df_grouped["num_equip"].fillna("Non spécifié")
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
-
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Escaliers - Données brutes",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Nombre d'indisponibilités",
-                "ligne": "Ligne",
-            },
-        )
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title=None,
-            xaxis_tickangle=-45,  # Rotate x-axis labels
-        )
-        fig
-
-    with col2:
-        # Filter the dataframe to keep only the rows with non-null duration
-        df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-        df_filtered = df_filtered[df_filtered["type_equipement"] == "escalier"]
-
-        df_grouped = (
-            df_filtered.groupby(["num_equip", "ligne"], dropna=False)
-            .size()
-            .reset_index(name="count")
-        )
-
-        # Replace NaN values in 'station' and 'ligne' with a label for better visualization
-        df_grouped["num_equip"] = df_grouped["num_equip"].fillna("Non spécifié")
-        df_grouped["ligne"] = df_grouped["ligne"].fillna("Non spécifié")
-
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Escaliers - Données filtrées",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Nombre d'indisponibilités",
-                "ligne": "Ligne",
-            },
-        )
-
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title=None,
-            xaxis_tickangle=-45,  # Rotate x-axis labels
-        )
-        fig
 
     # %% Travail en heures d'indisponibilités
-    st.header("Travail en heures d'indisponibilités")
-    st.subheader("Tout équipement confondu")
+    st.header("Analyses en heures d'indisponibilités")
 
-    df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-
-    # Replace None values in 'station' with "non spécifié"
-    df_filtered["num_equip"] = df_filtered["num_equip"].fillna("Non spécifié")
-    df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
-
-    df_grouped = (
-        df_filtered.groupby(["num_equip", "ligne"])["duree_indispo"]
-        .sum()
-        .reset_index(name="count")
+    type_equipement_list = st.multiselect(
+        "Sélectionner un ou plusieurs types d'équipement",
+        df_selected_year["type_equipement"].unique(),
+        default=df_selected_year["type_equipement"].unique(),
+        key="multiselect2",
     )
+
+    df_filtered = df_selected_year[
+        (df_selected_year["duree_indispo"].notnull())
+        & (df_selected_year["type_equipement"].isin(type_equipement_list))
+    ]
 
     q75 = df_filtered["duree_indispo"].quantile(0.75)
+    st.write(f"75% des indisponibilités durent **{q75:.2f} heures** ou moins.")
 
-    st.write(
-        f"Parmi l'ensemble des indisponibilités avec une heure de début et de fin, 75% durent : **{q75:.2f} heures** ou moins."
-    )
-    st.write(
-        f"On filtrera les données pour ne garder que celles avec une durée d'indisponibilité inférieure à {q75:.2f} heures."
-    )
+    custom_colors = {
+        "A": "red",
+        "B": "blue",
+        "C": "orange",
+        "D": "green",
+        "F": "lightgreen",
+        "T1": "purple",
+        "T4": "darkviolet",
+        "P+R": "pink",
+        "Non spécifié": "gray",
+    }
 
-    col1, col2 = st.columns(2)
-
-    with col1:
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Durée d'indisponibilités par équipement - données non filtrées",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Heures d'indisponibilités",
-            },
-        )
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title="Durée (h)",
-            xaxis_tickangle=-45,
-        )
-        st.plotly_chart(fig)
-
-    with col2:
-        df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-        df_filtered = df_filtered[df_filtered["duree_indispo"] <= q75]
-
-        # Replace None values in 'station' with "non spécifié"
-        df_filtered["num_equip"] = df_filtered["num_equip"].fillna("Non spécifié")
-        df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
-
-        df_grouped = (
-            df_filtered.groupby(["num_equip", "ligne"])["duree_indispo"]
+    def plot_duration(data, title):
+        grouped = (
+            data.groupby(["num_equip", "ligne"])["duree_indispo"]
             .sum()
             .reset_index(name="count")
         )
-
         fig = px.bar(
-            df_grouped,
+            grouped,
             x="num_equip",
             y="count",
             color="ligne",
-            title="Durée d'indisponibilités par équipement - données filtrées",
+            title=title,
             labels={
                 "num_equip": "Numéro d'équipement",
                 "count": "Heures d'indisponibilités",
             },
+            color_discrete_map=custom_colors,
         )
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title="Durée (h)",
-            xaxis_tickangle=-45,
-        )
+        fig.update_layout(xaxis_tickangle=-45, yaxis_title="Durée (h)")
         st.plotly_chart(fig)
-
-    st.subheader("Ascenseurs")
-
-    df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-    df_filtered = df_filtered[df_filtered["type_equipement"] == "ascenseur"]
-
-    # Replace None values in 'station' with "non spécifié"
-    df_filtered["num_equip"] = df_filtered["num_equip"].fillna("Non spécifié")
-    df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
-
-    df_grouped = (
-        df_filtered.groupby(["num_equip", "ligne"])["duree_indispo"]
-        .sum()
-        .reset_index(name="count")
-    )
-
-    q75 = df_filtered["duree_indispo"].quantile(0.75)
 
     col1, col2 = st.columns(2)
-
     with col1:
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Durée d'indisponibilités par équipement - données non filtrées",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Heures d'indisponibilités",
-            },
-        )
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title="Durée (h)",
-            xaxis_tickangle=-45,
-        )
-        st.plotly_chart(fig)
-
+        plot_duration(df_filtered, "Données non filtrées")
     with col2:
-        df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-        df_filtered = df_filtered[df_filtered["type_equipement"] == "ascenseur"]
-        df_filtered = df_filtered[df_filtered["duree_indispo"] <= q75]
-
-        # Replace None values in 'station' with "non spécifié"
-        df_filtered["num_equip"] = df_filtered["num_equip"].fillna("Non spécifié")
-        df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
-
-        df_grouped = (
-            df_filtered.groupby(["num_equip", "ligne"])["duree_indispo"]
-            .sum()
-            .reset_index(name="count")
+        plot_duration(
+            df_filtered[df_filtered["duree_indispo"] <= q75],
+            "Données filtrées (<= q75)",
         )
-
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Durée d'indisponibilités par équipement - données filtrées",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Heures d'indisponibilités",
-            },
-        )
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title="Durée (h)",
-            xaxis_tickangle=-45,
-        )
-        st.plotly_chart(fig)
-
-    st.subheader("Escaliers")
-
-    df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-    df_filtered = df_filtered[df_filtered["type_equipement"] == "escalier"]
-
-    # Replace None values in 'station' with "non spécifié"
-    df_filtered["num_equip"] = df_filtered["num_equip"].fillna("Non spécifié")
-    df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
-
-    df_grouped = (
-        df_filtered.groupby(["num_equip", "ligne"])["duree_indispo"]
-        .sum()
-        .reset_index(name="count")
-    )
-
-    q75 = df_filtered["duree_indispo"].quantile(0.75)
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Durée d'indisponibilités par équipement - données non filtrées",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Heures d'indisponibilités",
-            },
-        )
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title="Durée (h)",
-            xaxis_tickangle=-45,
-        )
-        st.plotly_chart(fig)
-
-    with col2:
-        df_filtered = df_selected_year[df_selected_year["duree_indispo"].notnull()]
-        df_filtered = df_filtered[df_filtered["type_equipement"] == "escalier"]
-        df_filtered = df_filtered[df_filtered["duree_indispo"] <= q75]
-
-        # Replace None values in 'station' with "non spécifié"
-        df_filtered["num_equip"] = df_filtered["num_equip"].fillna("Non spécifié")
-        df_filtered["ligne"] = df_filtered["ligne"].fillna("Non spécifié")
-
-        df_grouped = (
-            df_filtered.groupby(["num_equip", "ligne"])["duree_indispo"]
-            .sum()
-            .reset_index(name="count")
-        )
-
-        fig = px.bar(
-            df_grouped,
-            x="num_equip",
-            y="count",
-            color="ligne",
-            title="Durée d'indisponibilités par équipement - données filtrées",
-            labels={
-                "num_equip": "Numéro d'équipement",
-                "count": "Heures d'indisponibilités",
-            },
-        )
-        fig.update_layout(
-            xaxis_title="Numéro d'équipement",
-            yaxis_title="Durée (h)",
-            xaxis_tickangle=-45,
-        )
-        st.plotly_chart(fig)
 
 # %% Onglet 5 : Patrimoine
 if options == "Patrimoine":
@@ -1134,7 +787,7 @@ if options == "Patrimoine":
     )
 
     col1, col2 = st.columns(
-        [1, 2]
+        [2, 1]
     )  # Adjust column widths, col1 is twice as wide as col2
 
     with col1:
@@ -1164,38 +817,50 @@ if options == "Patrimoine":
     # %% Equipements par marque
     st.header("Equipements par marque")
 
-    st.markdown(
-        "<span style='color:red; font-weight:bold;'>Attention code couleur thyssen et schindler ne match pas</span>",
-        unsafe_allow_html=True,
-    )
+    # Define custom colormaps for marques
+    custom_colors_marque = {
+        "Thyssen": "blue",
+        "Schindler": "red",
+        "Otis": "green",
+        "Kone": "purple",
+        "Soretex": "orange",
+        "Amonter": "pink",
+        "Asc Svce": "brown",
+    }
 
     # Group by 'type_equipement' and 'marque' and count the number of occurrences
-    df2_grouped = df2.groupby(["type_equipement", "marque"])["id"].count().reset_index()
-    df2_grouped = df2_grouped.rename(columns={"id": "count"}).sort_values(
-        by="count", ascending=False
+    df2_grouped = (
+        df2.groupby(["type_equipement", "marque"])["id"]
+        .count()
+        .reset_index()
+        .rename(columns={"id": "count"})
+        .sort_values(by="count", ascending=False)
     )
     df2_grouped["percentage"] = df2_grouped["count"] / df2_grouped["count"].sum() * 100
 
     col1, col2, col3 = st.columns(3)
+
     with col1:
-        # Create a bar chart using Plotly Express
+        # Bar chart for all equipment by marque
         fig = px.bar(
             df2_grouped,
             x="marque",
             y="count",
-            color="type_equipement",
+            color="marque",
             title="Répartition des équipements par marque (nombre)",
             labels={"marque": "Marque", "count": "Nombre d'équipements"},
             barmode="group",
+            color_discrete_map=custom_colors_marque,
         )
         fig.update_layout(
             xaxis_title="Marque",
             yaxis_title="Nombre d'équipements",
-            legend_title_text="Type d'équipement",
+            legend_title_text="Marque",
         )
-        fig
+        st.plotly_chart(fig)
 
     with col2:
+        # Pie chart for ascenseurs by marque
         df_filtered = df2_grouped[df2_grouped["type_equipement"] == "ascenseur"]
         fig = px.pie(
             df_filtered,
@@ -1203,12 +868,15 @@ if options == "Patrimoine":
             values="count",
             title="Répartition des ascenseurs par marque (pourcentage)",
             labels={"marque": "Marque", "count": "Nombre d'équipements"},
+            color="marque",
+            color_discrete_map=custom_colors_marque,
         )
         fig.update_layout(legend_title_text="Marque")
         fig.update_traces(textinfo="percent+label")
         st.plotly_chart(fig)
 
     with col3:
+        # Pie chart for escaliers by marque
         df_filtered = df2_grouped[df2_grouped["type_equipement"] == "escalier"]
         fig = px.pie(
             df_filtered,
@@ -1216,6 +884,8 @@ if options == "Patrimoine":
             values="count",
             title="Répartition des escaliers par marque (pourcentage)",
             labels={"marque": "Marque", "count": "Nombre d'équipements"},
+            color="marque",
+            color_discrete_map=custom_colors_marque,
         )
         fig.update_layout(legend_title_text="Marque")
         fig.update_traces(textinfo="percent+label")
@@ -1232,6 +902,17 @@ if options == "Patrimoine":
     df2_grouped = df2_grouped.rename(columns={"id": "count"}).sort_values(
         by="count", ascending=False
     )
+
+    # Define custom colormaps for marques
+    custom_colors_marque = {
+        "Thyssen": "blue",
+        "Schindler": "red",
+        "Otis": "green",
+        "Kone": "purple",
+        "Soretex": "orange",
+        "Amonter": "pink",
+        "Asc Svce": "brown",
+    }
 
     col1, col2 = st.columns(2)
     with col1:
@@ -1262,6 +943,7 @@ if options == "Patrimoine":
             nbins=10,
             title="Equipements par année de mise en service selon la marque",
             barmode="group",
+            color_discrete_map=custom_colors_marque,
         )
 
         fig.update_layout(
@@ -1563,7 +1245,35 @@ if options == "Croisement données":
 
 # %% Onglet 7 : Scraping
 if options == "Scraping":
+    st.markdown(
+        """
+    <div style='text-align:center;'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Under_construction_icon-orange.svg/1024px-Under_construction_icon-orange.svg.png' 
+                alt='En travaux' 
+                style='width:100px;height:100px;'>
+        <h1 style='color:red;'>En travaux</h1>
+    </div>
+    """,
+        unsafe_allow_html=True,
+    )
+
     st.title("Scraping")
     st.write(
         "Données issues du script de scraping de la page info voyageurs accessibilité TCL"
     )
+# %% Onglet 8 : Classification
+if options == "Classification":
+    st.markdown(
+        """
+<div style='text-align:center;'>
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Under_construction_icon-orange.svg/1024px-Under_construction_icon-orange.svg.png' 
+            alt='En travaux' 
+            style='width:100px;height:100px;'>
+    <h1 style='color:red;'>En travaux</h1>
+</div>
+""",
+        unsafe_allow_html=True,
+    )
+
+    st.title("Classification")
+    st.write("Blabla sur la classification")
