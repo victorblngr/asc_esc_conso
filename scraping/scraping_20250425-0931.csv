@@ -1,0 +1,64 @@
+ligne,arret,equipement_impacte,type_equipement,id,cause,remise_en_service,date,heure,execution_time
+A,Laurent Bonnevay,Ascenseur n°169 Parc Relais,Ascenseur,169,Panne,Vendredi 25 avril 2025 à 11:30,2025/04/25,11:30,20250425-0931
+A,Ampère - Victor Hugo,Escalier mécanique  du quai direction Vaulx-en-Velin La Soie  jusqu'à la sortie rue Victor HUGO,Escalier,,Panne,Vendredi 25 avril 2025 à 16:30,2025/04/25,16:30,20250425-0931
+A,Flachet - Alain Gilles,"Ascenseur n°182 direction Vaulx-en-Velin La Soie, accès cours Emile Zola",Ascenseur,182,Panne,Mercredi 30 avril 2025 à 17:30,2025/04/30,17:30,20250425-0931
+A,Flachet - Alain Gilles,Escalier mécanique  du quai direction Perrache jusqu'à la sortie cours Emile Zola,Escalier,,Panne,Dimanche 4 mai 2025 à 19:30,2025/05/04,19:30,20250425-0931
+A,Flachet - Alain Gilles,Escalier mécanique  du quai direction Vaulx-en-Velin La Soie jusqu'à la sortie cours Emile Zola,Escalier,,Panne,Vendredi 25 avril 2025 à 12:30,2025/04/25,12:30,20250425-0931
+A,Bellecour,"Ascenseur n°261 direction Vaulx-en-Velin La Soie, correspondance ligne A direction Perrache et  ligne D, direction Gare de Vénissieux ou Gare de Vaise",Ascenseur,261,Panne,Mercredi 30 avril 2025 à 14:30,2025/04/30,14:30,20250425-0931
+A,Bellecour,"Ascenseur n°263 direction Gare de Vaise ou Gare de Vénissieux, correspondance Ligne A direction Perrache ou Vaulx-en-Velin La Soie",Ascenseur,263,Panne,Mercredi 30 avril 2025 à 10:30,2025/04/30,10:30,20250425-0931
+A,Bellecour,Escalier mécanique  du quai direction Vaulx-en-Velin La Soie jusqu'à la sortie place Bellecour,Escalier,,Panne,Mercredi 30 avril 2025 à 19:30,2025/04/30,19:30,20250425-0931
+A,Bellecour,Escalier mécanique  du by-pass de correspondance ligne D / ligne A jusqu'au quai ligne A direction Vaulx-en-Velin La Soie,Escalier,,Entretien programmé,Mercredi 30 avril 2025 à 15:30,2025/04/30,15:30,20250425-0931
+A,Bellecour,Escalier mécanique  du quai central jusqu'à la mezzanine niveau Point Contact,Escalier,,Entretien programmé,Jeudi 15 mai 2025 à 08:30,2025/05/15,08:30,20250425-0931
+A,Bellecour,Escalier mécanique  du quai central jusqu'à la mezzanine sud (côté Antonin Poncet),Escalier,,Panne,Mercredi 30 avril 2025 à 19:30,2025/04/30,19:30,20250425-0931
+A,Bellecour,Escalier mécanique  du quai central jusqu'à la mezzanine sud (côté Antonin Poncet),Escalier,,Entretien programmé,Jeudi 15 mai 2025 à 14:00,2025/05/15,14:00,20250425-0931
+A,Bellecour,Escalier mécanique  de la mezzanine sud (côté Antonin Poncet) jusqu'à la sortie place Antonin Poncet (face à la Poste),Escalier,,Entretien programmé,Mercredi 30 avril 2025 à 11:00,2025/04/30,11:00,20250425-0931
+A,Cusset,"Ascenseur n°171 direction Perrache, accès mezzanine de correspondance direction Vaulx-en-Velin La Soie, accès cours Emile Zola",Ascenseur,171,Panne,Dimanche 27 avril 2025 à 17:30,2025/04/27,17:30,20250425-0931
+A,Charpennes Charles Hernu,Escalier mécanique  du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la place Charles Hernu,Escalier,,Panne,Vendredi 25 avril 2025 à 17:30,2025/04/25,17:30,20250425-0931
+B,Jean Macé,Ascenseur n°451 direction St-Genis-Laval Hôpital Lyon Sud et accès place Jean Macé,Ascenseur,451,Panne,Mercredi 30 avril 2025 à 17:30,2025/04/30,17:30,20250425-0931
+B,Jean Macé,Escalier mécanique  du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la sortie place Jean Macé (côté rue Parmentier),Escalier,,Panne,Mardi 20 mai 2025 à 17:30,2025/05/20,17:30,20250425-0931
+B,Gare Part-Dieu V.Merle,Escalier mécanique  du quai direction Charpennes (par couloir de liaison direction gare de la Part Dieu) jusqu'à la mezzanine niveau Point Contact.,Escalier,,Panne,Jeudi 15 mai 2025 à 17:30,2025/05/15,17:30,20250425-0931
+B,Charpennes Charles Hernu,Escalier mécanique  du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la place Charles Hernu,Escalier,,Panne,Vendredi 25 avril 2025 à 17:30,2025/04/25,17:30,20250425-0931
+B,Debourg,Escalier mécanique  du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la sortie avenue Jean Jaures,Escalier,,Panne,Vendredi 30 mai 2025 à 17:30,2025/05/30,17:30,20250425-0931
+B,Place Jean Jaurès,Ascenseur n°462 direction Charpennes et accès avenue Jean Jaurès,Ascenseur,462,Panne,Mercredi 30 avril 2025 à 17:30,2025/04/30,17:30,20250425-0931
+B,Place Jean Jaurès,Escalier mécanique  du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la sortie avenue Jean Jaures,Escalier,,Panne,Dimanche 4 mai 2025 à 17:30,2025/05/04,17:30,20250425-0931
+B,Place Jean Jaurès,Escalier mécanique  du quai direction Charpennes jusqu'à la sortie avenue Jean Jaures,Escalier,,Panne,Dimanche 4 mai 2025 à 17:30,2025/05/04,17:30,20250425-0931
+B,Brotteaux,Escalier mécanique  de la mezzanine jusqu'à la sortie Gare des Brotteaux,Escalier,,Panne,Jeudi 15 mai 2025 à 16:30,2025/05/15,16:30,20250425-0931
+B,Saxe - Gambetta,Escalier mécanique  du quai direction Charpennes jusqu'à la mezzanine nord (niveau ligne D direction Gare de Vaise),Escalier,,Entretien programmé,Mercredi 30 avril 2025 à 09:30,2025/04/30,09:30,20250425-0931
+B,Saxe - Gambetta,Escalier mécanique  du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la mezzanine sud (niveau sortie avenue Jean Jaurès),Escalier,,Panne,Samedi 31 mai 2025 à 17:30,2025/05/31,17:30,20250425-0931
+B,Saxe - Gambetta,Escalier mécanique  du quai direction Charpennes jusqu'à la mezzanine sud (niveau sortie avenue Jean Jaurès),Escalier,,Panne,Samedi 26 avril 2025 à 17:30,2025/04/26,17:30,20250425-0931
+B,Saxe - Gambetta,Escalier mécanique  de la mezzanine sud  jusqu'à la sortie avenue Jean Jaurès,Escalier,,Panne,Samedi 31 mai 2025 à 17:30,2025/05/31,17:30,20250425-0931
+B,Oullins Centre,Escalier mécanique  entre la mezzanine inférieure et la mezzanine supérieure,Escalier,,Panne,Vendredi 25 avril 2025 à 19:30,2025/04/25,19:30,20250425-0931
+B,Oullins Centre,Escalier mécanique  entre la mezzanine supérieure et la place Anatole France côté rue de la République,Escalier,,Panne,Vendredi 25 avril 2025 à 09:30,2025/04/25,09:30,20250425-0931
+B,Stade de Gerland Le LOU,Ascenseur n°481 correspondance entre le quai direction St-Genis-Laval Hôpital Lyon Sud et la mezzanine,Ascenseur,481,Panne,Vendredi 25 avril 2025 à 17:30,2025/04/25,17:30,20250425-0931
+B,Stade de Gerland Le LOU,Escalier mécanique  de la mezzanine niveau Point Contact jusqu'au quai direction Charpennes,Escalier,,Panne,Mercredi 14 mai 2025 à 17:30,2025/05/14,17:30,20250425-0931
+B,Stade de Gerland Le LOU,Escalier mécanique  de la mezzanine niveau Point Contact jusqu'à la sortie avenue Jean Jaurès,Escalier,,Panne,Mercredi 30 avril 2025 à 17:30,2025/04/30,17:30,20250425-0931
+C,Croix-Rousse,"Ascenseur n°571 direction Cuire, correspondance avec le quai direction Hôtel de Ville, et accès Bd de la Croix Rousse",Ascenseur,571,Panne,Vendredi 25 avril 2025 à 11:30,2025/04/25,11:30,20250425-0931
+D,Gare de Vénissieux,Escalier mécanique  de la mezzanine vers le quai de départ direction Gare de Vaise,Escalier,,Entretien programmé,Dimanche 4 mai 2025 à 12:00,2025/05/04,12:00,20250425-0931
+D,Monplaisir Lumière,Escalier mécanique  du quai direction Gare de Vénissieux jusqu'à la sortie cours Albert Thomas,Escalier,,Entretien programmé,Vendredi 30 mai 2025 à 09:30,2025/05/30,09:30,20250425-0931
+D,Saxe - Gambetta,Escalier mécanique  du quai direction Charpennes jusqu'à la mezzanine nord (niveau ligne D direction Gare de Vaise),Escalier,,Entretien programmé,Mercredi 30 avril 2025 à 09:30,2025/04/30,09:30,20250425-0931
+D,Saxe - Gambetta,Escalier mécanique  du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la mezzanine sud (niveau sortie avenue Jean Jaurès),Escalier,,Panne,Samedi 31 mai 2025 à 17:30,2025/05/31,17:30,20250425-0931
+D,Saxe - Gambetta,Escalier mécanique  du quai direction Charpennes jusqu'à la mezzanine sud (niveau sortie avenue Jean Jaurès),Escalier,,Panne,Samedi 26 avril 2025 à 17:30,2025/04/26,17:30,20250425-0931
+D,Saxe - Gambetta,Escalier mécanique  de la mezzanine sud  jusqu'à la sortie avenue Jean Jaurès,Escalier,,Panne,Samedi 31 mai 2025 à 17:30,2025/05/31,17:30,20250425-0931
+D,Vieux Lyon Cat. St-Jean,"Escalier mécanique  de la mezzanine niveau -3 (correspondance ligne D direction Gare de Vaise ou Gare de Vénissieux) jusqu'à la mezzanine niveau Point Contact, accès rue du Doyenné.",Escalier,,Panne,Vendredi 9 mai 2025 à 20:30,2025/05/09,20:30,20250425-0931
+D,Parilly,Escalier mécanique  du quai direction Gare de Vaise jusqu'à la sortie rue de La Fontaine,Escalier,,Entretien programmé,Dimanche 4 mai 2025 à 17:00,2025/05/04,17:00,20250425-0931
+D,Gorge de Loup,"Ascenseur n°822 direction Gare de Vénissieux, correspondance quai direction Gare de Vaise, accès Gare Routière ou Gare SNCF et rue Sergent Michel Berthet",Ascenseur,822,Entretien programmé,Mercredi 30 avril 2025 à 06:30,2025/04/30,06:30,20250425-0931
+D,Gorge de Loup,"Escalier mécanique  sortie Place Basse (côté agence commerciale) niveau Parc Relais, jusqu'à la mezzanine niveau départ gare de bus, rue Sergent Michel Berthet",Escalier,,Panne,Samedi 10 mai 2025 à 10:30,2025/05/10,10:30,20250425-0931
+D,Bellecour,"Ascenseur n°261 direction Vaulx-en-Velin La Soie, correspondance ligne A direction Perrache et  ligne D, direction Gare de Vénissieux ou Gare de Vaise",Ascenseur,261,Panne,Mercredi 30 avril 2025 à 14:30,2025/04/30,14:30,20250425-0931
+D,Bellecour,"Ascenseur n°263 direction Gare de Vaise ou Gare de Vénissieux, correspondance Ligne A direction Perrache ou Vaulx-en-Velin La Soie",Ascenseur,263,Panne,Mercredi 30 avril 2025 à 10:30,2025/04/30,10:30,20250425-0931
+D,Bellecour,Escalier mécanique  du quai direction Vaulx-en-Velin La Soie jusqu'à la sortie place Bellecour,Escalier,,Panne,Mercredi 30 avril 2025 à 19:30,2025/04/30,19:30,20250425-0931
+D,Bellecour,Escalier mécanique  du by-pass de correspondance ligne D / ligne A jusqu'au quai ligne A direction Vaulx-en-Velin La Soie,Escalier,,Entretien programmé,Mercredi 30 avril 2025 à 15:30,2025/04/30,15:30,20250425-0931
+D,Bellecour,Escalier mécanique  du quai central jusqu'à la mezzanine niveau Point Contact,Escalier,,Entretien programmé,Jeudi 15 mai 2025 à 08:30,2025/05/15,08:30,20250425-0931
+D,Bellecour,Escalier mécanique  du quai central jusqu'à la mezzanine sud (côté Antonin Poncet),Escalier,,Panne,Mercredi 30 avril 2025 à 19:30,2025/04/30,19:30,20250425-0931
+D,Bellecour,Escalier mécanique  du quai central jusqu'à la mezzanine sud (côté Antonin Poncet),Escalier,,Entretien programmé,Jeudi 15 mai 2025 à 14:00,2025/05/15,14:00,20250425-0931
+D,Bellecour,Escalier mécanique  de la mezzanine sud (côté Antonin Poncet) jusqu'à la sortie place Antonin Poncet (face à la Poste),Escalier,,Entretien programmé,Mercredi 30 avril 2025 à 11:00,2025/04/30,11:00,20250425-0931
+D,Laennec,Escalier mécanique  du quai direction Gare de Vaise jusqu'à la sortie rue Guillaume Paradin,Escalier,,Entretien programmé,Jeudi 15 mai 2025 à 19:30,2025/05/15,19:30,20250425-0931
+D,Laennec,Escalier mécanique  du quai direction Gare de Vénissieux jusqu'à la sortie rue Guillaume Paradin,Escalier,,Entretien programmé,Jeudi 15 mai 2025 à 18:00,2025/05/15,18:00,20250425-0931
+D,Grange Blanche,Escalier mécanique  de place d'Arsonval (descente de bus) jusqu'à la mezzanine face à la croissanterie,Escalier,,Entretien programmé,Jeudi 15 mai 2025 à 16:00,2025/05/15,16:00,20250425-0931
+D,Grange Blanche,Escalier mécanique  de la mezzanine côté hôpital Edouard Herriot jusqu'à la sortie Hôpital Edouard Herriot,Escalier,,Panne,Vendredi 30 mai 2025 à 07:30,2025/05/30,07:30,20250425-0931
+D,Sans Souci,Escalier mécanique  du quai direction Gare de Vénissieux jusqu'à la sortie cours Albert Thomas,Escalier,,Entretien programmé,Vendredi 30 mai 2025 à 18:00,2025/05/30,18:00,20250425-0931
+D,Guillotière Gabriel Péri,Escalier mécanique  du quai direction Gare de Vénissieux jusqu'à la mezzanine,Escalier,,Panne,Mercredi 30 avril 2025 à 15:30,2025/04/30,15:30,20250425-0931
+D,Valmy,Escalier mécanique  de la mezzanine jusqu'à la sortie place Valmy,Escalier,,Entretien programmé,Lundi 30 juin 2025 à 18:00,2025/06/30,18:00,20250425-0931
+D,Garibaldi,Escalier mécanique  du quai direction Gare de Vaise jusqu'à la mezzanine,Escalier,,Panne,Mercredi 30 avril 2025 à 14:30,2025/04/30,14:30,20250425-0931
+D,Garibaldi,Escalier mécanique  du quai direction Gare de Vénissieux jusqu'à la mezzanine,Escalier,,Entretien programmé,Mercredi 30 avril 2025 à 20:30,2025/04/30,20:30,20250425-0931
+F1,Vieux Lyon Cat. St-Jean,"Escalier mécanique  de la mezzanine niveau -3 (correspondance ligne D direction Gare de Vaise ou Gare de Vénissieux) jusqu'à la mezzanine niveau Point Contact, accès rue du Doyenné.",Escalier,,Panne,Vendredi 9 mai 2025 à 20:30,2025/05/09,20:30,20250425-0931
+F2,Vieux Lyon Cat. St-Jean,"Escalier mécanique  de la mezzanine niveau -3 (correspondance ligne D direction Gare de Vaise ou Gare de Vénissieux) jusqu'à la mezzanine niveau Point Contact, accès rue du Doyenné.",Escalier,,Panne,Vendredi 9 mai 2025 à 20:30,2025/05/09,20:30,20250425-0931
