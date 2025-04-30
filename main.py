@@ -1258,13 +1258,13 @@ if options == "Croisement données":
 # %% Onglet 7 : Scraping
 if options == "Scraping":
     st.title("Scraping")
-    st.write(
-        "Données issues du script de scraping de la page info voyageurs accessibilité TCL"
-    )
-
     st.markdown(
         "<span style='color:red;'>**A noter que pour l'instant seuls les ascenseurs sont représentés (disposent d'un id sur le site info TCL)**</span>",
         unsafe_allow_html=True,
+    )
+
+    st.write(
+        "Données issues du script de scraping de la page info voyageurs accessibilité TCL"
     )
 
     # Define the folder path
@@ -1369,7 +1369,7 @@ if options == "Classification non supervisée":
         print("Erreur: Le fichier n'a pas été trouvé.")
         exit()
     except KeyError:
-        print("Erreur: La colonne 'REDACTION' ou la feuille spécifiée n'existe pas.")
+        print("Erreur: La colonne 'commentaire' n'existe pas.")
         exit()
 
     if not descriptions:
