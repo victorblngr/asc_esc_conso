@@ -1274,8 +1274,11 @@ if options == "Scraping":
     )
 # %% Onglet 8 : Classification
 if options == "Classification non supervisée":
-    st.title("Classification")
-    st.write("Blabla sur la classification")
+    st.title("Classification non supervisée")
+    st.write(
+        "Utilisation de l'algorithme K-means pour le clustering des descriptions de pannes."
+    )
+    st.write("Vectorisation du texte avec TF-IDF.")
 
     # 1. Charger les données
     try:
@@ -1354,7 +1357,7 @@ if options == "Classification non supervisée":
         )
 
     cluster_summary_df = pd.DataFrame(cluster_summary)
-    st.dataframe(cluster_summary_df, use_container_width=True)
+    st.dataframe(cluster_summary_df, hide_index=True)
 
     # 6. Afficher les mots-clés pour chaque cluster
     # Extract feature names from the vectorizer
@@ -1374,7 +1377,7 @@ if options == "Classification non supervisée":
         }
     )
 
-    st.dataframe(keywords_df, use_container_width=True)
+    st.dataframe(keywords_df, hide_index=True)
 
     # 7. Visualisation des résultats
     # Score de silhouette pour chaque nombre de clusters
