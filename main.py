@@ -1262,6 +1262,11 @@ if options == "Scraping":
         "Données issues du script de scraping de la page info voyageurs accessibilité TCL"
     )
 
+    st.markdown(
+        "<span style='color:red;'>**A noter que pour l'instant seuls les ascenseurs sont représentés (disposent d'un id sur le site info TCL)**</span>",
+        unsafe_allow_html=True,
+    )
+
     # Define the folder path
     folder_path = "scraping"
 
