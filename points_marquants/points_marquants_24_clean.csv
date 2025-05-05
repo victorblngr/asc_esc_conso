@@ -1,4 +1,4 @@
-date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;num_equip;commentaire;motifs;type_equipement;annee_debut_panne;duree_indispo;jour_indispo;id
+﻿date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;num_equip;commentaire;motifs;type_equipement;annee_debut_panne;duree_indispo;jour_indispo;id
 05/02/2023;00:10;08/02/2024;19:55;B;Jean jaures;Asc. 461; Câble limiteur de vitesse HS + câble commande de déverrouillage de frein HS;;ascenseur;2023;8851.75;368.8229166666667;461.0
 14/04/2023;21:12;25/04/2024;13:00;D;Grange Blanche ;Asc. 741;Amortisseur de pulsation de la centrale hydraulique HS;Panne;ascenseur;2023;9039.8;376.6583333333333;741.0
 20/05/2023;17:50;30/04/2024;;D;Gorge de loup;Esc. 8205;Pignons de sortie de réducteur HS;Usure;escalier;2023;;;8205.0
@@ -13,7 +13,6 @@ date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;
 + pb remontées infos, asc ok ";;ascenseur;2023;;;751.0
 22/12/2023;20:00;14/01/2024;;A;Ampère ;Asc. 271;Cables tractions HS suite à désincarceration;;ascenseur;2023;;;271.0
 30/12/2023;;01/12/2024;;D;Vieux Lyon;Esc. 8107;Réducteur gauche + moteur HS - En cours d'expertise  ;Panne;escalier;2023;;;8107.0
-01/01/2024;;01/06/2024;;P+R;Reseau TCL ;;Hors perimètre KL;;;2024;;;
 03/01/2024;;07/01/2024;;A;Cordeliers;Esc. 2502;Porte LEM HS ;;escalier;2024;;;2502.0
 05/01/2024;;08/01/2024;14:30;A;Cordeliers;Asc. 252;Réglages portes ;;ascenseur;2024;;;252.0
 08/01/2024;;11/01/2024;18:00;D;Garibaldi;Esc. 7702;Roulements du pignon de déflexion + anti dérive de l’entraînement de la main courante haut droit HS;;escalier;2024;;;7702.0
@@ -24,7 +23,7 @@ date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;
 20/01/2024;;30/05/2024;;A;Ampère ;Esc. 2702;Roulements arbre d’entraînement de chaînes de marches  HS;Panne;escalier;2024;;;2702.0
 20/01/2024;;24/01/2024;17:15;D;Mermoz;Asc. 721;Capteur de selection HS ;;ascenseur;2024;;;721.0
 20/01/2024;;23/01/2024;11:00;D;Valmy;Asc. 832;Problemes centrale hydraulique;;ascenseur;2024;;;832.0
-22/01/2024;7:00;22/02/2024;12:31;D;Valmy;Esc. 8302;FM935 - Remplacement armoire de commandes;;escalier;2024;749.5166666666667;31.22986111111111;8302.0
+22/01/2024;07:00;22/02/2024;12:31;D;Valmy;Esc. 8302;FM935 - Remplacement armoire de commandes;;escalier;2024;749.5166666666667;31.22986111111111;8302.0
 24/01/2024;;01/02/2024;15:00;A;Laurent Bonnevay;Esc. 1602;Suite vandalisme poulie motrice de l’entraînement de main courante côté gauche HS;;escalier;2024;;;1602.0
 26/01/2024;;29/02/2024;17:15;D;Mermoz;Esc. 7202;Empilement de marches;;escalier;2024;;;7202.0
 28/01/2024;16:44;07/02/2024;18:00;B;Saxe Gambetta ;Esc. 4402;Probleme alimentation transformateur d' isolement  ;;escalier;2024;241.26666666666668;10.052777777777779;4402.0
@@ -54,7 +53,7 @@ câbles de puissance moteur défectueux";;escalier;2024;494.53333333333336;20.60
 23/02/2024;21:15;23/03/2024;;D;Grange Blanche ;Esc. 7403;Empilement de marches ;;escalier;2024;;;7403.0
 24/02/2024;16:10;25/02/2024;17:02;A;Bellecour;Asc. 264;Probleme thermique moteur ;;ascenseur;2024;24.866666666666667;1.0361111111111112;264.0
 26/02/2024;04:49;27/02/2024;00:30;B;Guichard;Asc. 432;Arret fuite d'eau;;ascenseur;2024;19.683333333333334;0.8201388888888889;432.0
-27/02/2024;8:00;28/02/2024;13:00;D;Valmy;Esc. 8302;Essais + OPR FM935 ;;escalier;2024;29.0;1.2083333333333333;8302.0
+27/02/2024;08:00;28/02/2024;13:00;D;Valmy;Esc. 8302;Essais + OPR FM935 ;;escalier;2024;29.0;1.2083333333333333;8302.0
 01/03/2024;21:33;05/03/2024;20:00;D;Gare de Vénissieux;Esc. 7003;Plaques porte peignes HS ;;escalier;2024;94.45;3.935416666666667;7003.0
 01/03/2024;08:25;13/03/2024;18:00;D;Guillotière ;Esc. 7901;Alignement de chaines de marche NOK + Axes entrainement HS ;;escalier;2024;297.5833333333333;12.399305555555555;7901.0
 03/03/2024;20:10;06/03/2024;18:22;B;Oullins Centre ;Esc. 5105;Contact de la chaine d'entraienement NOK + Déplacement peigne;;escalier;2024;70.2;2.9250000000000003;5105.0
@@ -63,7 +62,7 @@ câbles de puissance moteur défectueux";;escalier;2024;494.53333333333336;20.60
 11/03/2024;;13/03/2024;18:00;D;Mermoz;Asc. 722 ;Remplacement poulie ;;ascenseur;2024;;;722.0
 12/03/2024;00:24;11/04/2024;12:00;B;Oullins Centre ;Esc. 5107;Main courante gauche NOK + Carte elec frein secour NOK;Panne;escalier;2024;731.6;30.483333333333334;5107.0
 12/03/2024;;05/04/2024;08:02;D;Valmy;Esc. 8303;FM935 - Remplacement armoire de commandes;;escalier;2024;;;8303.0
-13/03/2024;8:30;26/03/2024;18:48;B;Charpennes;Asc. 213;Remplacement poutre de maintien du seuil cabine HS + contact securite passerelle cabine hs;;ascenseur;2024;322.3;13.429166666666667;213.0
+13/03/2024;08:30;26/03/2024;18:48;B;Charpennes;Asc. 213;Remplacement poutre de maintien du seuil cabine HS + contact securite passerelle cabine hs;;ascenseur;2024;322.3;13.429166666666667;213.0
 14/03/2024;09:00;20/03/2024;14:56;B;Brotteaux;Esc. 4101;Roulements arbre d’entraînement de chaînes de marches  HS;;escalier;2024;149.93333333333334;6.247222222222223;4101.0
 16/03/2024;19:25;17/03/2024;11:17;A;Gratte Ciel;Esc. 1901;Probleme réglages patins de marches ;;escalier;2024;15.866666666666667;0.6611111111111111;1901.0
 16/03/2024;05:00;19/03/2024;09:41;D;Monplaisir Lumiere ;Asc. 751;Interphonie HS - intervention UMEQ;;ascenseur;2024;76.68333333333334;3.195138888888889;751.0
@@ -71,7 +70,7 @@ câbles de puissance moteur défectueux";;escalier;2024;494.53333333333336;20.60
 21/03/2024;;24/03/2024;17:50;B;Oullins Centre ;Esc. 5105;Borne alim en amont du transfo d' isol HS (Non SCH);;escalier;2024;;;5105.0
 25/03/2024;09:57;31/05/2024;;B;Debourg;Esc. 4702;Roulements de l’arbre d’entrainement des chaines de marches sont défectueux + arbre de main courante;;escalier;2024;;;4702.0
 25/03/2024;17:43;29/03/2024;05:16;A;République;Esc. 2002;Bobine du frein principale HS;;escalier;2024;83.55;3.4812499999999997;2002.0
-01/04/2024;1:33;02/04/2024;16:00;A;Flachet ;Esc. 1801;Borne transformateur isolement HS ;Panne;escalier;2024;38.45;1.6020833333333335;1801.0
+01/04/2024;01:33;02/04/2024;16:00;A;Flachet ;Esc. 1801;Borne transformateur isolement HS ;Panne;escalier;2024;38.45;1.6020833333333335;1801.0
 02/04/2024;09:47;01/06/2024;05:30;A;Bellecour;Esc. 2610;Empilement de marches;Panne;escalier;2024;1435.7166666666667;59.82152777777778;2610.0
 03/04/2024;08:30;30/04/2024;12:45;D;Gare de Vaise;Esc. 8404;FM935 - Remplacement armoire de commandes;Amélioration;escalier;2024;652.25;27.177083333333332;8404.0
 04/04/2024;10:44;09/04/2024;18:00;D;Guillotière ;Esc. 7904;Main courante cassée ;Usure;escalier;2024;127.26666666666667;5.302777777777778;7904.0
@@ -112,7 +111,7 @@ idem sur 5105 OCE ";Panne;escalier;2024;;;5107.0
 11/05/2024;12:05;13/05/2024;09:05;D;Grange Blanche ;Asc. 741;Contact cabine HS;Panne;ascenseur;2024;45.0;1.875;741.0
 11/05/2024;05:18;12/05/2024;05:40;F;Minimes;Asc. 921;Disjonctions et masses suite infiltration d'eau;Panne;ascenseur;2024;24.366666666666667;1.0152777777777777;921.0
 12/05/2024;11:32;13/05/2024;17:14;D;Parilly;Esc.7101;Defaut peigne ;Panne;escalier;2024;29.7;1.2375;7101.0
-13/05/2024;4:34;17/05/2024;05:25;A;Cusset;Esc. 1701;plaque porte peigne hs + 4 marches HS (vis);Vandalisme ;escalier;2024;96.85;4.035416666666666;1701.0
+13/05/2024;04:34;17/05/2024;05:25;A;Cusset;Esc. 1701;plaque porte peigne hs + 4 marches HS (vis);Vandalisme ;escalier;2024;96.85;4.035416666666666;1701.0
 13/05/2024;10:17;15/05/2024;17:08;F;Minimes;Asc. 921;Disjonctions et masses suite infiltration d'eau;Panne;ascenseur;2024;54.85;2.285416666666667;921.0
 17/05/2024;18:56;18/05/2024;10:02;A;Bellecour;Asc. 264;Defaut thermique moteur centrale hydraulique;Panne;ascenseur;2024;15.1;0.6291666666666667;264.0
 17/05/2024;;07/06/2024;12:30;A;Charpennes;Esc. 2102;Empilement de marches;Panne;escalier;2024;;;2102.0
@@ -128,7 +127,7 @@ idem sur 5105 OCE ";Panne;escalier;2024;;;5107.0
 27/05/2024;18:37;28/05/2024;15:25;D;Gare de Vénissieux;Asc. 701;Pb porte cabine ;Vandalisme ;ascenseur;2024;20.8;0.8666666666666667;701.0
 27/05/2024;10:07;16/07/2024;14:46;D;Garibaldi;Esc. 7704;Piste de galet de chaine HS ;Usure;escalier;2024;1204.65;50.19375;7704.0
 27/05/2024;00:27;05/08/2024;12:31;D;Saxe Gambetta ;Esc. 4406;Défaut entrée main courante (haut droite);Vandalisme ;escalier;2024;1692.0666666666666;70.50277777777778;4406.0
-31/05/2024;11:20;19/07/2024;9:53;A;Hotel de Ville ;Esc. 2401;Roulements arbre principal haut HS;Usure;escalier;2024;1174.55;48.93958333333333;2401.0
+31/05/2024;11:20;19/07/2024;09:53;A;Hotel de Ville ;Esc. 2401;Roulements arbre principal haut HS;Usure;escalier;2024;1174.55;48.93958333333333;2401.0
 31/05/2024;17:32;03/06/2024;13:00;T4;Manufacture ;Esc. 9701 ; DP HS;Panne;escalier;2024;67.46666666666667;2.8111111111111113;9701.0
 31/05/2024;05:10;02/06/2024;05:17;D;Valmy;Esc. 8302;Problemes frein ;Panne;escalier;2024;48.11666666666667;2.004861111111111;8302.0
 01/06/2024;10:30;02/06/2024;11:43;D;Garibaldi;Esc. 7702;Defaut peigne;Panne;escalier;2024;25.216666666666665;1.0506944444444444;7702.0
@@ -161,7 +160,7 @@ main courante + moteur";Usure;escalier;2024;30.833333333333332;1.284722222222222
 25/06/2024;11:37;25/06/2024;12:00;D;Garibaldi;Asc. 771;Visite RATP;;ascenseur;2024;0.38333333333333336;0.015972222222222224;771.0
 25/06/2024;12:41;25/06/2024;13:34;D;Garibaldi;Esc. 7702;Visite RATP;;escalier;2024;0.8833333333333333;0.03680555555555556;7702.0
 25/06/2024;04:50;17/08/2024;;B;Gerland;Esc. 4803;Galets de chaine HS ;Usure;escalier;2024;;;4803.0
-25/06/2024;9:23;25/06/2024;9:40;D;Laennec;Asc. 731;Visite RATP;;ascenseur;2024;0.2833333333333333;0.011805555555555555;731.0
+25/06/2024;09:23;25/06/2024;09:40;D;Laennec;Asc. 731;Visite RATP;;ascenseur;2024;0.2833333333333333;0.011805555555555555;731.0
 25/06/2024;10:08;13/07/2024;;D;Laennec;Esc. 7301;Visite RATP - Paliers arbre de retournement HS;Usure;escalier;2024;;;7301.0
 25/06/2024;15:39;27/06/2024;20:22;D;Parilly;Asc. 712;Probleme sur l'alimentation de l'asc - personnes bloqués - SNEF avisé pour intervention;Panne;ascenseur;2024;52.71666666666667;2.196527777777778;712.0
 26/06/2024;16:27;26/06/2024;18:24;A;Charpennes;Asc. 211;Fixation plafond cabine NOK;Panne;ascenseur;2024;1.95;0.08125;211.0
@@ -172,7 +171,7 @@ main courante + moteur";Usure;escalier;2024;30.833333333333332;1.284722222222222
 27/06/2024;16:54;30/06/2024;21:05;D;Mermoz;Asc. 722 ;operateur de porte NOK;Panne;ascenseur;2024;76.18333333333334;3.1743055555555557;722.0
 28/06/2024;04:40;30/06/2024;08:51;D;Gare de vaise;Esc. 8404;Acces fermé grille HS;****;escalier;2024;52.18333333333333;2.1743055555555553;8404.0
 29/06/2024;06:15;30/06/2024;06:18;D;Garibaldi;Esc. 7702;Defaut peigne;Panne;escalier;2024;24.05;1.0020833333333334;7702.0
-03/07/2024;17:42 ;11/07/2024;11:46;B;Jean jaures;Asc. 461;Courroie operateur + coulisseaux + contact porte HS + Probleme parachute enclenché + reglages portes;Usure;ascenseur;2024;;;461.0
+03/07/2024;17:42;11/07/2024;11:46;B;Jean jaures;Asc. 461;Courroie operateur + coulisseaux + contact porte HS + Probleme parachute enclenché + reglages portes;Usure;ascenseur;2024;186.06666666666666;7.752777777777777;461.0
 04/07/2024;09:26;04/07/2024;10:34;D;Guillotière ;Esc. 7903;Chaine de main courante gauche HS - Remplacée;Usure;escalier;2024;1.1333333333333333;0.04722222222222222;7903.0
 04/07/2024;08:30;08/07/2024;15:48;B;Oullins Centre ;Esc. 5105;"Pb adherence MC probleme depuis mise en route
 idem sur 5107 OCE ";Panne;escalier;2024;103.3;4.304166666666666;5105.0
@@ -181,7 +180,7 @@ idem sur 5107 OCE ";Panne;escalier;2024;103.3;4.304166666666666;5105.0
 08/07/2024;10:36;12/07/2024;11:24;D;Mermoz;Asc. 722 ;Disjoncteur HS ;Panne;ascenseur;2024;96.8;4.033333333333333;722.0
 08/07/2024;16:20;12/07/2024;10:51;B;Part Dieu;Esc. 4206;Bobine de commande de frein principal HS;Panne;escalier;2024;90.51666666666667;3.7715277777777776;4206.0
 09/07/2024;04:56;10/07/2024;14:12;D;Vieux Lyon;Esc. 8105;Defaut peigne ;Usure;escalier;2024;33.266666666666666;1.386111111111111;8105.0
-10/07/2024;9:04;14/07/2024;11:41;B;Gare de Vénissieux;Asc. 702;Opérateur porte HS;Panne;ascenseur;2024;98.61666666666666;4.1090277777777775;702.0
+10/07/2024;09:04;14/07/2024;11:41;B;Gare de Vénissieux;Asc. 702;Opérateur porte HS;Panne;ascenseur;2024;98.61666666666666;4.1090277777777775;702.0
 12/07/2024;17:23;14/07/2024;14:15;D;Valmy;Asc. 831;Probleme sur operateur de porte ;Mauvaise utilisation;ascenseur;2024;44.86666666666667;1.8694444444444445;831.0
 15/07/2024;13:40;17/07/2024;11:07;D;Mermoz;Asc. 722 ;Poulie HS;Panne;ascenseur;2024;45.45;1.89375;722.0
 20/07/2024;17:46;26/07/2024;04:45;A;Gratte Ciel;Esc. 1901;Travaux sur chaine de marche bryuante;Usure;escalier;2024;130.98333333333332;5.457638888888888;1901.0
@@ -228,40 +227,40 @@ Fusible de sécurité alim primaire HS";Panne;escalier;2024;7.55;0.3145833333333
 05/09/2024;14:07;27/10/2024;11:41;D;Saxe Gambetta ;Asc. 443;Distributeur centrale huile + moteur pompe hydraulique NOK;Panne;ascenseur;2024;1245.5666666666666;51.89861111111111;443.0
 06/09/2024;09:00;30/11/2024;;D;Grange Blanche ;Esc. 7406;Chaines de marches HS ;Usure;escalier;2024;;;7406.0
 08/09/2024;18:59;11/09/2024;11:53;B;Part Dieu;Esc. 4203;Bobine de frein HS ;Panne;escalier;2024;64.9;2.704166666666667;4203.0
-10/09/2024;8:10;10/09/2024;15:12;D;Grange Blanche ;Esc. 7405;Défaut peigne - remplacement plaque;Panne;escalier;2024;7.033333333333333;0.29305555555555557;7405.0
-11/09/2024;7:15;30/11/2024;;A;Flachet ;Esc. 1802;vis de fixation et réglage porte peigne station d’entraînement hs + plaque PP HS;Usure;escalier;2024;;;1802.0
+10/09/2024;08:10;10/09/2024;15:12;D;Grange Blanche ;Esc. 7405;Défaut peigne - remplacement plaque;Panne;escalier;2024;7.033333333333333;0.29305555555555557;7405.0
+11/09/2024;07:15;30/11/2024;;A;Flachet ;Esc. 1802;vis de fixation et réglage porte peigne station d’entraînement hs + plaque PP HS;Usure;escalier;2024;;;1802.0
 12/09/2024;09:05;13/09/2024;20:13;D;Gare de Vénissieux;Asc. 702;Galets porte palière bas HS;Vandalisme ;ascenseur;2024;35.13333333333333;1.4638888888888888;702.0
 13/09/2024;23:59;01/10/2024;16:00;A;Charpennes;Asc. 212;Carte elec frein HS + VF HS ;Panne;ascenseur;2024;424.01666666666665;17.66736111111111;212.0
 14/09/2024;18:43;16/09/2024;14:30;A;Masséna ;Asc. 221;Programme + carte elec HS;Panne;ascenseur;2024;43.78333333333333;1.8243055555555554;221.0
 18/09/2024;04:54;10/11/2024;;B;Jean macé;Esc. 4502;paliers chariot tenseur de la station de retournement HS ;Panne;escalier;2024;;;4502.0
 20/09/2024;08:18;23/09/2024;10:15;D;Grange Blanche ;Esc. 7402;Remplacement main courante ;Usure;escalier;2024;73.95;3.0812500000000003;7402.0
-21/09/2024;05:07;23/09/2024;4:42;D;Mermoz;Esc. 7201;Chaine d’entrainement main courante coté droit à remplacer ;Usure;escalier;2024;47.583333333333336;1.982638888888889;7201.0
+21/09/2024;05:07;23/09/2024;04:42;D;Mermoz;Esc. 7201;Chaine d’entrainement main courante coté droit à remplacer ;Usure;escalier;2024;47.583333333333336;1.982638888888889;7201.0
 24/09/2024;04:47;03/10/2024;10:47;D;Vieux Lyon;Esc. 8101;Boitier d’exploitation HS;Usure;escalier;2024;222.0;9.25;8101.0
-25/09/2024;9:41;27/09/2024;10:42;A;Gratte Ciel;Asc. 192;Opérateur de porte HS;Panne;ascenseur;2024;49.016666666666666;2.042361111111111;192.0
+25/09/2024;09:41;27/09/2024;10:42;A;Gratte Ciel;Asc. 192;Opérateur de porte HS;Panne;ascenseur;2024;49.016666666666666;2.042361111111111;192.0
 26/09/2024;05:09;02/10/2024;12:07;B;Oullins Centre ;Esc. 5105;Probleme sur disjoncteur JHA ;Panne;escalier;2024;150.96666666666667;6.290277777777778;5105.0
 30/09/2024;16:48;04/10/2024;14:07;D;Guillotière ;Esc. 7903;Remplacement chaine de mc droite ;Usure;escalier;2024;93.31666666666666;3.8881944444444443;7903.0
 02/10/2024;11:19;02/10/2024;16:02;A;République;Asc. 201 ;probleme poulie suite VGP DEKRA;Usure;ascenseur;2024;4.716666666666667;0.19652777777777777;201.0
 03/10/2024;07:02;04/10/2024;10:23;A;Charpennes;Asc. 213;Deverouillage frein à remplacer;Usure;ascenseur;2024;27.35;1.1395833333333334;213.0
 03/10/2024;05:42;07/10/2024;19:59;D;Valmy;Esc. 8301;C/C carte elec station retournement;Panne;escalier;2024;110.28333333333333;4.595138888888889;8301.0
 04/10/2024;11:59;15/10/2024;11:36;B;Guichard;Asc. 431;Parachute hs mis à l'arret DEKRA;Panne;ascenseur;2024;263.6166666666667;10.984027777777778;431.0
-05/10/2024;5:18;05/10/2024;17:08;A;Flachet ;Asc. 181;Bouton appel HS ;Vandalisme ;ascenseur;2024;11.833333333333334;0.4930555555555556;181.0
-06/10/2024;5:47;10/10/2024;12:29;;Grange Blanche ;Asc. 743;Problemes de distributeur;Panne;ascenseur;2024;102.7;4.279166666666667;743.0
+05/10/2024;05:18;05/10/2024;17:08;A;Flachet ;Asc. 181;Bouton appel HS ;Vandalisme ;ascenseur;2024;11.833333333333334;0.4930555555555556;181.0
+06/10/2024;05:47;10/10/2024;12:29;nan;Grange Blanche ;Asc. 743;Problemes de distributeur;Panne;ascenseur;2024;102.7;4.279166666666667;743.0
 07/10/2024;05:04;27/10/2024;12:58;D;Gorge de loup;Esc. 8205;MC HS + Galets de marches HS;Usure;escalier;2024;487.9;20.329166666666666;8205.0
 08/10/2024;10:34;13/10/2024;11:08;A;Ampère ;Esc. 2702;Cartes manœuvre HS + Contact de peigne haut HS;Panne;escalier;2024;120.56666666666666;5.023611111111111;2702.0
 08/10/2024;17:39;30/11/2024;;A;Laurent Bonnevay;Esc. 1601;MC gauche HS;Usure;escalier;2024;;;1601.0
 08/10/2024;06:48;11/10/2024;10:46;B;Saxe Gambetta ;Esc. 4405;Court circuit bobine de frein. Connecteur rempli d'eau ;Panne;escalier;2024;75.96666666666667;3.165277777777778;4405.0
-12/10/2024;1:35;15/10/2024;15:29;A;Cusset;Asc. 172;Porte cabine vandalisée;Vandalisme ;ascenseur;2024;85.9;3.579166666666667;172.0
+12/10/2024;01:35;15/10/2024;15:29;A;Cusset;Asc. 172;Porte cabine vandalisée;Vandalisme ;ascenseur;2024;85.9;3.579166666666667;172.0
 13/10/2024;17:00;30/11/2024;;B;Jean jaures;Esc. 4602;Tourteau haut HS;Panne;escalier;2024;;;4602.0
 16/10/2024;08:20;18/10/2024;12:02;D;Laennec;Esc. 7302;Contact levé de peigne HS;Panne;escalier;2024;51.7;2.154166666666667;7302.0
 16/10/2024;10:00;16/10/2024;14:15;B;Part Dieu;Esc. 4203;Plaque porte peigne HS - DEKRA;Usure;escalier;2024;4.25;0.17708333333333334;4203.0
 17/10/2024;07:40;22/10/2024;10:34;B;Jean macé;Esc. 4501;Défaut cliquet anti dérive. Tension chaine moteur ;Panne;escalier;2024;122.9;5.120833333333334;4501.0
 17/10/2024;17:56;29/10/2024;09:22;T4;Manufacture ;Esc. 9701 ;Défaut Synchronisme main courante coté gauche ;Mauvaise utilisation;escalier;2024;279.43333333333334;11.643055555555556;9701.0
 18/10/2024;06:30;30/11/2024;;B;Gerland;Asc. 483;Cable de traction HS ;Panne;ascenseur;2024;;;483.0
-19/10/2024;1:48;30/10/2024;17:24;B;Part Dieu;Esc. 4203;Main courante HS ;Usure;escalier;2024;279.6;11.65;4203.0
+19/10/2024;01:48;30/10/2024;17:24;B;Part Dieu;Esc. 4203;Main courante HS ;Usure;escalier;2024;279.6;11.65;4203.0
 20/10/2024;23:40;24/10/2024;07:22;D;Garibaldi;Esc. 7702;Commande armoire de manœuvre HS - Rép provisoire;Usure;escalier;2024;79.7;3.3208333333333333;7702.0
 21/10/2024;08:00;06/11/2024;22:32;B;Debourg;Esc. 4702;Empilement de marches;Mauvaise utilisation;escalier;2024;398.53333333333336;16.605555555555558;4702.0
 22/10/2024;11:28;27/10/2024;10:32;T1;IUT Feyssine;Asc. 961; Porte cabine du bas abimée ;Vandalisme ;ascenseur;2024;119.06666666666666;4.961111111111111;961.0
-23/10/2024;;30/11/2024;;;Gerland;Esc. 4802;Portion de chaine HS - suite DEKRA;Usure;escalier;2024;;;4802.0
+23/10/2024;;30/11/2024;;nan;Gerland;Esc. 4802;Portion de chaine HS - suite DEKRA;Usure;escalier;2024;;;4802.0
 25/10/2024;05:04;27/10/2024;08:35;D;Grange Blanche ;Asc. 743;Defaut reglages distributeur hydraulique ;Panne;ascenseur;2024;51.516666666666666;2.1465277777777776;743.0
 26/10/2024;05:16;28/10/2024;09:56;D;Saxe Gambetta ;Asc. 442;Coulisseau HS;Panne;ascenseur;2024;52.666666666666664;2.194444444444444;442.0
 28/10/2024;13:11;31/12/2024;;B;Guichard;Asc. 431;Parachute cabine + guides HS;Usure;ascenseur;2024;;;431.0

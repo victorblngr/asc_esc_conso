@@ -1,9 +1,9 @@
-date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;num_equip;commentaire;motifs;type_equipement;annee_debut_panne;duree_indispo;jour_indispo;id
+﻿date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;num_equip;commentaire;motifs;type_equipement;annee_debut_panne;duree_indispo;jour_indispo;id
 30/12/2023;;07/04/2025;07:45;D;Vieux Lyon;Esc. 8107;Réducteur gauche + moteur HS ;Panne;escalier;2023;;;8107.0
 29/08/2024;17:34;27/03/2025;17:35;B;Jean Jaures;Esc. 4601;Galets de chaîne de marche + axes HS - remplacement;Usure;escalier;2024;5040.016666666666;210.00069444444443;4601.0
 06/09/2024;09:00;03/04/2025;14:00;D;Grange blanche ;Esc. 7406;Chaines de marches HS  ;Usure;escalier;2024;5021.0;209.20833333333334;7406.0
 13/10/2024;17:00;10/04/2025;;B;Jean Jaures ;Esc. 4602;Tourteau haut HS;Panne;escalier;2024;;;4602.0
-23/10/2024;7:47;30/04/2025;;B;Gerland ;Esc. 4802;Portion de chaine HS - suite DEKRA;Usure;escalier;2024;;;4802.0
+23/10/2024;07:47;30/04/2025;;B;Gerland ;Esc. 4802;Portion de chaine HS - suite DEKRA;Usure;escalier;2024;;;4802.0
 30/10/2024;12:00;31/05/2025;;D;Garibaldi;Esc. 7702;Commande armoire de manœuvre + anti dérive HS ;Panne;escalier;2024;;;7702.0
 12/11/2024;19:00;30/04/2025;;B;Debourg;Esc. 4702;Galets de chaines + axes HS;Panne;escalier;2024;;;4702.0
 11/12/2024;11:31;15/05/2025;;D;Laennec;Esc. 7302;"contact pp haut hs + Reprise global de l'EM
@@ -56,7 +56,7 @@ Pignons de sortie de réducteur HS";Panne;escalier;2025;;;8205.0
 25/03/2025;13:25;10/04/2025;12:00;D;Guillotière;Esc. 7903;Réglage plaque porte peigne sur Dekra;CR DEKRA;escalier;2025;382.5833333333333;15.940972222222221;7903.0
 25/03/2025;15:15;13/04/2025;;D;Guillotière;Esc. 7904;Jeu entre marche sup à 6mm + cache de DP manquant;CR DEKRA;escalier;2025;;;7904.0
 27/03/2025;14:00;01/04/2025;17:45;B;Part Dieu;Esc. 4210;Main courante de droite déjantée sur toute la longueur, Main courante droite HS, Guide MC haut droit HS;Panne;escalier;2025;123.75;5.15625;4210.0
-29/03/2025;5:15;31/03/2025;15:30;A;Laurent Bonnevay;Esc. 1601;Serrure boitier HS;Panne;escalier;2025;58.25;2.4270833333333335;1601.0
+29/03/2025;05:15;31/03/2025;15:30;A;Laurent Bonnevay;Esc. 1601;Serrure boitier HS;Panne;escalier;2025;58.25;2.4270833333333335;1601.0
 30/03/2025;00:10;07/04/2025;16:15;D;Gare de Vénissieux ;Esc. 7002;Peignes haut et bas cassés;Panne;escalier;2025;208.08333333333334;8.67013888888889;7002.0
-30/03/2025;5:20;31/03/2025;14:00;A;Massena;Asc. 221;Serrure toit cabine cassée;Panne;ascenseur;2025;32.666666666666664;1.361111111111111;221.0
-31/03/2025;9:30;27/04/2025;;A;Cusset;Asc. 171;Poulie de renvoie haute HS;Panne;ascenseur;2025;;;171.0
+30/03/2025;05:20;31/03/2025;14:00;A;Massena;Asc. 221;Serrure toit cabine cassée;Panne;ascenseur;2025;32.666666666666664;1.361111111111111;221.0
+31/03/2025;09:30;27/04/2025;;A;Cusset;Asc. 171;Poulie de renvoie haute HS;Panne;ascenseur;2025;;;171.0

@@ -1,10 +1,10 @@
-date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;num_equip;commentaire;motifs;type_equipement;annee_debut_panne;duree_indispo;jour_indispo;id
+﻿date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;num_equip;commentaire;motifs;type_equipement;annee_debut_panne;duree_indispo;jour_indispo;id
 30/12/2023;;01/03/2025;;D;Vieux Lyon;Esc. 8107;Réducteur gauche + moteur HS ;Panne;escalier;2023;;;8107.0
 29/08/2024;17:34;15/03/2025;;B;Jean Jaures;Esc. 4601;Galets de chaîne de marche + axes HS - remplacement;Usure;escalier;2024;;;4601.0
 06/09/2024;09:00;01/05/2025;;D;Grange blanche ;Esc. 7406;Chaines de marches HS ;Usure;escalier;2024;;;7406.0
 18/09/2024;04:54;08/01/2025;15:30;B;Jean macé;Esc. 4502;paliers chariot tenseur de la station de retournement HS ;Panne;escalier;2024;2698.6;112.44166666666666;4502.0
 13/10/2024;17:00;15/03/2025;;B;Jean Jaures ;Esc. 4602;Tourteau haut HS;Panne;escalier;2024;;;4602.0
-23/10/2024;7:47;30/03/2025;;B;Gerland ;Esc. 4802;Portion de chaine HS - suite DEKRA;Usure;escalier;2024;;;4802.0
+23/10/2024;07:47;30/03/2025;;B;Gerland ;Esc. 4802;Portion de chaine HS - suite DEKRA;Usure;escalier;2024;;;4802.0
 28/10/2024;10:00;09/01/2025;15:10;B;Part Dieu;Esc. 4210;Roulements + arbre de retournement HS;Panne;escalier;2024;1757.1666666666667;73.21527777777779;4210.0
 28/10/2024;13:11;28/02/2025;;B;Guichard;Asc. 431;Parachute cabine + guides HS;Usure;ascenseur;2024;;;431.0
 30/10/2024;12:00;31/03/2025;;D;Garibaldi;Esc. 7702;Commande armoire de manœuvre + anti dérive HS ;Panne;escalier;2024;;;7702.0
@@ -51,7 +51,7 @@ Réglage en cours";;ascenseur;2025;161.06666666666666;6.711111111111111;752.0
 17/01/2025;12:28;22/01/2025;17:45;B;HLS;Esc. 5204;Defaut peigne ;Panne;escalier;2025;125.28333333333333;5.220138888888889;5204.0
 17/01/2025;15:42;19/01/2025;12:56;D;Saxe Gambetta;Asc. 443;Pb ouverture de porte serrure HS ;Panne;ascenseur;2025;45.233333333333334;1.8847222222222222;443.0
 17/01/2025;18:13;20/01/2025;05:02;D;Gorge de loup;Esc. 8201;Defaut peigne ;Panne;escalier;2025;58.81666666666667;2.4506944444444447;8201.0
-20/01/2025;5:13;24/01/2025;14:56;B;Jean Jaures ;Asc.461;Probleme fermeture portes;Mauvaise utilisation;ascenseur;2025;105.71666666666667;4.404861111111111;461.0
+20/01/2025;05:13;24/01/2025;14:56;B;Jean Jaures ;Asc.461;Probleme fermeture portes;Mauvaise utilisation;ascenseur;2025;105.71666666666667;4.404861111111111;461.0
 21/01/2025;08:00;21/01/2025;14:00;B;OCE;Esc. 5107;EXPERTISE TECHNIQUE SUITE ACCIDENT 2023;Audit;escalier;2025;6.0;0.25;5107.0
 21/01/2025;11:30;05/04/2025;;B;Debourg;Esc. 4701;Empilement de marches ;Panne;escalier;2025;;;4701.0
 21/01/2025;14:39;01/02/2025;06:18;C;Croix rousse ;Asc. 571;Problème de cellule toute hauteur nétoyage essai remise en service ;Audit;ascenseur;2025;255.65;10.652083333333334;571.0
@@ -68,5 +68,5 @@ Réglage en cours";;ascenseur;2025;161.06666666666666;6.711111111111111;752.0
 29/01/2025;13:15;30/01/2025;11:45;D;Montplaisir Lumiere  ;Asc. 752;Coulisseaux haut droit HS;Usure;ascenseur;2025;22.5;0.9375;752.0
 30/01/2025;23:11;02/02/2025;18:30;B;Part dieu ;Esc. 4210;Disjonction de l'appareil ;Panne;escalier;2025;67.31666666666666;2.804861111111111;4210.0
 30/01/2025;15:00;16/02/2025;;A;Cusset;Asc. 171;Câblette endommagée suite point saillant  au niveau porte palière côté rue;Usure;ascenseur;2025;;;171.0
-31/01/2025;07:04;11/02/2025;9:11;D;Sans souci;Asc. 761;VF+MOTEUR HS;Panne;ascenseur;2025;266.1166666666667;11.088194444444445;761.0
+31/01/2025;07:04;11/02/2025;09:11;D;Sans souci;Asc. 761;VF+MOTEUR HS;Panne;ascenseur;2025;266.1166666666667;11.088194444444445;761.0
 31/01/2025;18:44;03/02/2025;14:05;A;Bellecour;Asc. 264;reprise operateur de porte cabine ;Panne;ascenseur;2025;67.35;2.80625;264.0

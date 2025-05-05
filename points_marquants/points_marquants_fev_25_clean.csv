@@ -1,70 +1,67 @@
-date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;num_equip;commentaire;motifs;type_equipement;annee_debut_panne;duree_indispo;jour_indispo;id
-30/12/2023;;31/03/2025;;D;Vieux Lyon;Esc. 8107;Réducteur gauche + moteur HS ;Panne;escalier;2023.0;;;8107.0
-29/08/2024;17:34;10/04/2025;;B;Jean Jaures;Esc. 4601;Galets de chaîne de marche + axes HS - remplacement;Usure;escalier;2024.0;;;4601.0
-06/09/2024;09:00;01/05/2025;;D;Grange blanche ;Esc. 7406;Chaines de marches HS ;Usure;escalier;2024.0;;;7406.0
-13/10/2024;17:00;10/04/2025;;B;Jean Jaures ;Esc. 4602;Tourteau haut HS;Panne;escalier;2024.0;;;4602.0
-23/10/2024;7:47;30/03/2025;;B;Gerland ;Esc. 4802;Portion de chaine HS - suite DEKRA;Usure;escalier;2024.0;;;4802.0
-28/10/2024;13:11;28/02/2025;13:55;B;Guichard;Asc. 431;Parachute cabine + guides HS;Usure;ascenseur;2024.0;2952.733333333333;123.03055555555555;431.0
-30/10/2024;12:00;31/03/2025;;D;Garibaldi;Esc. 7702;Commande armoire de manœuvre + anti dérive HS ;Panne;escalier;2024.0;;;7702.0
-12/11/2024;19:00;15/04/2025;;B;Debourg;Esc. 4702;Galets de chaines + axes HS;Panne;escalier;2024.0;;;4702.0
+﻿date_debut_panne;heure_debut_panne;date_fin_panne;heure_fin_panne;ligne;station;num_equip;commentaire;motifs;type_equipement;annee_debut_panne;duree_indispo;jour_indispo;id
+30/12/2023;;31/03/2025;;D;Vieux Lyon;Esc. 8107;Réducteur gauche + moteur HS ;Panne;escalier;2023;;;8107.0
+29/08/2024;17:34;10/04/2025;;B;Jean Jaures;Esc. 4601;Galets de chaîne de marche + axes HS - remplacement;Usure;escalier;2024;;;4601.0
+06/09/2024;09:00;01/05/2025;;D;Grange blanche ;Esc. 7406;Chaines de marches HS ;Usure;escalier;2024;;;7406.0
+13/10/2024;17:00;10/04/2025;;B;Jean Jaures ;Esc. 4602;Tourteau haut HS;Panne;escalier;2024;;;4602.0
+23/10/2024;07:47;30/03/2025;;B;Gerland ;Esc. 4802;Portion de chaine HS - suite DEKRA;Usure;escalier;2024;;;4802.0
+28/10/2024;13:11;28/02/2025;13:55;B;Guichard;Asc. 431;Parachute cabine + guides HS;Usure;ascenseur;2024;2952.733333333333;123.03055555555555;431.0
+30/10/2024;12:00;31/03/2025;;D;Garibaldi;Esc. 7702;Commande armoire de manœuvre + anti dérive HS ;Panne;escalier;2024;;;7702.0
+12/11/2024;19:00;15/04/2025;;B;Debourg;Esc. 4702;Galets de chaines + axes HS;Panne;escalier;2024;;;4702.0
 09/12/2024;;19/02/2025;12:00;D;Garibaldi;Esc. 7704;"Remplacement des peignes + Contact de trappe HS + 
 Jeux plinthe/marche. RerisesGlobal NC
-";Usure;escalier;2024.0;;;7704.0
+";Usure;escalier;2024;;;7704.0
 10/12/2024;;28/02/2025;15:15;D;Bellecour;Esc. 2607;"Chaine moteur + frein HS à remplacer + roulements moteur HS
-Reprise global de l'EM Non-conformité";Usure;escalier;2024.0;;;2607.0
+Reprise global de l'EM Non-conformité";Usure;escalier;2024;;;2607.0
 11/12/2024;11:31;15/04/2025;;D;Laennec;Esc. 7302;"contact pp haut hs + Reprise global de l'EM
- Non-conformité";Usure;escalier;2024.0;;;7302.0
-12/12/2024;;07/03/2025;11:36;D;Guillotière;Esc. 7902;Main courante HS;Usure;escalier;2024.0;;;7902.0
-12/12/2024;;30/04/2025;;D;Grange Blanche;Esc. 7402;Chaine de marche HS + main courante;Usure;escalier;2024.0;;;7402.0
-12/12/2024;;10/02/2025;10:12;D;Gorge de Loup;Esc. 8205;Poulie d'entrainement MC HS;Usure;escalier;2024.0;;;8205.0
-17/12/2024;13:13;31/03/2025;;D;Sans souci;Esc. 7602;Reprise global de l'EM non-conformité;Usure;escalier;2024.0;;;7602.0
-02/01/2025;17:47;06/03/2025;07:20;D;Gorge de loup;Asc. 821;vantaux cabine  + console de porte HS;Usure;ascenseur;2025.0;1501.55;62.56458333333333;821.0
-09/01/2025;10:00;28/02/2025;08:20;B;Part Dieu;Esc. 4205;Chaines de marches HS;Usure;escalier;2025.0;1198.3333333333333;49.93055555555555;4205.0
-13/01/2025;09:25;30/03/2025;;D;Montplaisir Lumiere  ;Esc. 7502;Chaine de marches + marches;Usure;escalier;2025.0;;;7502.0
-14/01/2025;14:18;17/02/2025;20:15;D;Guillotière;Esc. 7901;Defaut plaque porte peigne ;Panne;escalier;2025.0;821.95;34.24791666666667;7901.0
-21/01/2025;11:30;05/04/2025;;B;Debourg;Esc. 4701;Empilement de marches ;Panne;escalier;2025.0;;;4701.0
-23/01/2025;13:25;01/04/2025;;D;Parilly;Esc. 7101;chaîne d’entraînement de mains courantes G et D et le pignons D inférieur de déflexion  HS;Usure;escalier;2025.0;;;7101.0
-01/02/2025;13:22;19/02/2025;10:00;B;Jean Jaures;Asc. 461;VF+MOTEUR HS;Panne;ascenseur;2025.0;428.6333333333333;17.85972222222222;461.0
-02/02/2025;06:00;31/03/2025;;A;Foch;Esc. 2302;Reprise reglage plaque porte peigne + capteurs HS;Usure;escalier;2025.0;;;2302.0
-03/02/2025;10:26;04/03/2025;13:45;D;Gare de Vénissieux ;Esc. 7002;Roulement du pignon de la chaine anti derive HS;Usure;escalier;2025.0;699.3166666666667;29.138194444444448;7002.0
-03/02/2025;03:52 ;06/02/2025;09:35;D;Saxe gambetta ;Esc. 4410;Reprise réglages plaque PP;Usure;escalier;2025.0;;;4410.0
-04/02/2025;06:33;31/03/2025;;A;Flachet;Asc. 182;Remplacement moteur PMS + cable traction;Panne;ascenseur;2025.0;;;182.0
-04/02/2025;12:50;31/03/2025;;C;Croix rousse ;Esc. 5702;Réglage plaque porte peigne – actionneur à remplacer;CR DEKRA;escalier;2025.0;;;5702.0
-05/02/2025;07:23;31/03/2025;;D;Valmy;Esc. 8302;Chaine de marche + galet de chaine de marche à remplacer;Usure;escalier;2025.0;;;8302.0
-05/02/2025;11:53;31/03/2025;;D;Garibaldi;Esc. 7701;Chaine main courante X2 + pignon entrainement MC à remplacer;Usure;escalier;2025.0;;;7701.0
-05/02/2025;11:55;31/03/2025;;D;Gorge de loup;Esc. 8203;Reprise plaque porte peigne ;Usure;escalier;2025.0;;;8203.0
-05/02/2025;13:08;07/02/2025;13:37;D;Bellecour;Esc. 2605;Reprise plaque porte peigne ;Usure;escalier;2025.0;48.483333333333334;2.020138888888889;2605.0
-06/02/2025;08:32;31/03/2025;;D;Bellecour;Esc. 2608;Tapis de marches défectueux marches à remplacer, problème de piste station de retournement.;Usure;escalier;2025.0;;;2608.0
-06/02/2025;10:09;31/03/2025;;D;Bellecour;Esc 2603;piste de galets de marche percés, 2 guides de marche à remplacer station de retournement;Usure;escalier;2025.0;;;2603.0
-07/02/2025;13:00;20/02/2025;13:25;B;Oullins gare ;Asc. 501;Cellule + coullisseaux HS;Panne;ascenseur;2025.0;312.4166666666667;13.017361111111112;501.0
-08/02/2025;06:37;16/04/2025;;D;Grange Blanche;Asc. 741;Moteur centrale hydraulique HS;Panne;ascenseur;2025.0;;;741.0
-08/02/2025;14:37;03/03/2025;15:20;A;Laurent Bonnevay ;Asc. 161;Cellules HS + reprise operateur porte;Usure;ascenseur;2025.0;552.7166666666667;23.029861111111114;161.0
-09/02/2025;11:57;31/03/2025;;A;Cordeliers;Asc. 251;VF HS;Panne;ascenseur;2025.0;;;251.0
-10/02/2025;16:29;04/03/2025;16:00;B;Guichard ;Asc. 432 ;Contact fin de course HS + choc sur porte;Panne;ascenseur;2025.0;527.5166666666667;21.97986111111111;432.0
+ Non-conformité";Usure;escalier;2024;;;7302.0
+12/12/2024;;07/03/2025;11:36;D;Guillotière;Esc. 7902;Main courante HS;Usure;escalier;2024;;;7902.0
+12/12/2024;;30/04/2025;;D;Grange Blanche;Esc. 7402;Chaine de marche HS + main courante;Usure;escalier;2024;;;7402.0
+12/12/2024;;10/02/2025;10:12;D;Gorge de Loup;Esc. 8205;Poulie d'entrainement MC HS;Usure;escalier;2024;;;8205.0
+17/12/2024;13:13;31/03/2025;;D;Sans souci;Esc. 7602;Reprise global de l'EM non-conformité;Usure;escalier;2024;;;7602.0
+02/01/2025;17:47;06/03/2025;07:20;D;Gorge de loup;Asc. 821;vantaux cabine  + console de porte HS;Usure;ascenseur;2025;1501.55;62.56458333333333;821.0
+09/01/2025;10:00;28/02/2025;08:20;B;Part Dieu;Esc. 4205;Chaines de marches HS;Usure;escalier;2025;1198.3333333333333;49.93055555555555;4205.0
+13/01/2025;09:25;30/03/2025;;D;Montplaisir Lumiere  ;Esc. 7502;Chaine de marches + marches;Usure;escalier;2025;;;7502.0
+14/01/2025;14:18;17/02/2025;20:15;D;Guillotière;Esc. 7901;Defaut plaque porte peigne ;Panne;escalier;2025;821.95;34.24791666666667;7901.0
+21/01/2025;11:30;05/04/2025;;B;Debourg;Esc. 4701;Empilement de marches ;Panne;escalier;2025;;;4701.0
+23/01/2025;13:25;01/04/2025;;D;Parilly;Esc. 7101;chaîne d’entraînement de mains courantes G et D et le pignons D inférieur de déflexion  HS;Usure;escalier;2025;;;7101.0
+01/02/2025;13:22;19/02/2025;10:00;B;Jean Jaures;Asc. 461;VF+MOTEUR HS;Panne;ascenseur;2025;428.6333333333333;17.85972222222222;461.0
+02/02/2025;06:00;31/03/2025;;A;Foch;Esc. 2302;Reprise reglage plaque porte peigne + capteurs HS;Usure;escalier;2025;;;2302.0
+03/02/2025;10:26;04/03/2025;13:45;D;Gare de Vénissieux ;Esc. 7002;Roulement du pignon de la chaine anti derive HS;Usure;escalier;2025;699.3166666666667;29.138194444444448;7002.0
+03/02/2025;03:52;06/02/2025;09:35;D;Saxe gambetta ;Esc. 4410;Reprise réglages plaque PP;Usure;escalier;2025;77.71666666666667;3.2381944444444444;4410.0
+04/02/2025;06:33;31/03/2025;;A;Flachet;Asc. 182;Remplacement moteur PMS + cable traction;Panne;ascenseur;2025;;;182.0
+04/02/2025;12:50;31/03/2025;;C;Croix rousse ;Esc. 5702;Réglage plaque porte peigne – actionneur à remplacer;CR DEKRA;escalier;2025;;;5702.0
+05/02/2025;07:23;31/03/2025;;D;Valmy;Esc. 8302;Chaine de marche + galet de chaine de marche à remplacer;Usure;escalier;2025;;;8302.0
+05/02/2025;11:53;31/03/2025;;D;Garibaldi;Esc. 7701;Chaine main courante X2 + pignon entrainement MC à remplacer;Usure;escalier;2025;;;7701.0
+05/02/2025;11:55;31/03/2025;;D;Gorge de loup;Esc. 8203;Reprise plaque porte peigne ;Usure;escalier;2025;;;8203.0
+05/02/2025;13:08;07/02/2025;13:37;D;Bellecour;Esc. 2605;Reprise plaque porte peigne ;Usure;escalier;2025;48.483333333333334;2.020138888888889;2605.0
+06/02/2025;08:32;31/03/2025;;D;Bellecour;Esc. 2608;Tapis de marches défectueux marches à remplacer, problème de piste station de retournement.;Usure;escalier;2025;;;2608.0
+06/02/2025;10:09;31/03/2025;;D;Bellecour;Esc 2603;piste de galets de marche percés, 2 guides de marche à remplacer station de retournement;Usure;escalier;2025;;;2603.0
+07/02/2025;13:00;20/02/2025;13:25;B;Oullins gare ;Asc. 501;Cellule + coullisseaux HS;Panne;ascenseur;2025;312.4166666666667;13.017361111111112;501.0
+08/02/2025;06:37;16/04/2025;;D;Grange Blanche;Asc. 741;Moteur centrale hydraulique HS;Panne;ascenseur;2025;;;741.0
+08/02/2025;14:37;03/03/2025;15:20;A;Laurent Bonnevay ;Asc. 161;Cellules HS + reprise operateur porte;Usure;ascenseur;2025;552.7166666666667;23.029861111111114;161.0
+09/02/2025;11:57;31/03/2025;;A;Cordeliers;Asc. 251;VF HS;Panne;ascenseur;2025;;;251.0
+10/02/2025;16:29;04/03/2025;16:00;B;Guichard ;Asc. 432 ;Contact fin de course HS + choc sur porte;Panne;ascenseur;2025;527.5166666666667;21.97986111111111;432.0
 11/02/2025;05:04;18/02/2025;15:00;D;Gare de vaise ;Asc. 842;"Probleme carte electronique + carte manœuvre + connecteur fond de pannier
-en cours d' expertise ";Panne;ascenseur;2025.0;177.93333333333334;7.413888888888889;842.0
-11/02/2025;09:53;18/02/2025;11:00;T4;Manufacture;Esc. 9701;Cellule Dp NOK ;Panne;escalier;2025.0;169.11666666666667;7.046527777777778;9701.0
-11/02/2025;13:25;31/03/2025;;D;Bellecour;Esc. 2601;MC HS+ Nervure HS + Piste galet de marches HS;CR DEKRA;escalier;2025.0;;;2601.0
-11/02/2025;15:49;31/03/2025;;D;Bellecour;Esc. 2606;MC HS + Guide de mc HS + ;CR DEKRA;escalier;2025.0;;;2606.0
-12/02/2025;04:41;12/02/2025;06:32;B;OCE;;Demarrage tardif suite incident Gerland/Oullins gare;Panne;;2025.0;1.85;0.07708333333333334;
-12/02/2025;12:37;13/02/2025;16:33;B;Part Dieu ;Esc. 4208 ;Nez de marche cassé;Mauvaise utilisation;escalier;2025.0;27.933333333333334;1.163888888888889;4208.0
-12/02/2025;11:34;16/02/2025;11:44;D;Saxe gambetta ;Asc. 443 ;Contact fin de course haut HS ;CR DEKRA;ascenseur;2025.0;96.16666666666667;4.006944444444445;443.0
-12/02/2025;18:38;25/03/2025;;A;Charpennes ;Asc. 212;Oxydation cables de levage + poulie d'adherence HS ;Usure;ascenseur;2025.0;;;212.0
-12/02/2025;23:10;15/02/2025;14:40;D;Valmy;Esc. 8301;Defaut peigne - contact NOK;Panne;escalier;2025.0;63.5;2.6458333333333335;8301.0
-13/02/2025;11:05;13/03/2025;16:00;B;Part Dieu ;Asc. 422;Oxydation cables de levage + poulie d'adherence HS ;Usure;ascenseur;2025.0;676.9166666666666;28.20486111111111;422.0
-13/02/2025;15:47;17/02/2025;15:40;D;Grange Blanche;Asc. 743;Galet de serrure HS + porte bloquée n-1;Usure;ascenseur;2025.0;95.88333333333334;3.995138888888889;743.0
-13/02/2025;22:05;17/02/2025;21:35;A;Cordeliers;Asc. 252;VF HS;Usure;ascenseur;2025.0;95.5;3.9791666666666665;252.0
-14/02/2025;17:59;17/02/2025;10:00;B;Part Dieu ;Esc. 4208 ;Defaut rupture de chaine + Frein bloquant ;Panne;escalier;2025.0;64.01666666666667;2.667361111111111;4208.0
-15/02/2025;17:30;20/02/2025;14:00;D;Gare de Vénissieux ;Esc. 7003;Defaut plaque porte peigne + Affaissement ;Usure;escalier;2025.0;116.5;4.854166666666667;7003.0
-20/02/2025;23:20;06/04/2025;;B;Jean jaurés ;Asc. 462;Cellule porte HS + cable NOK + guide de chape et fixation tordeus ;;ascenseur;2025.0;;;462.0
-21/02/2025;9:30;23/02/2025;12:26;A;Charpennes ;Esc. 2101;GALET DE MARCHE BAS DROIT HS;Usure;escalier;2025.0;50.93333333333333;2.1222222222222222;2101.0
-21/02/2025;17:21;03/03/2025;16:00;B;Oullins Centre ;Asc. 513;PROBLEME PORTE NIVEAU RUE;Panne;ascenseur;2025.0;238.65;9.94375;513.0
-22/02/2025;;17/03/2025;5:50;F;Fourvière;Asc. 911;Travaux de maintenance annuelle du funiculaire ;;ascenseur;2025.0;;;911.0
-22/02/2025;11:55;31/03/2025;;D;Gare de Vénissieux ;Esc. 7001;DEFAUT MOTEUR + HUILE;Panne;escalier;2025.0;;;7001.0
-23/02/2025;12:00;05/03/2025;14:50;D;Guillotière;Esc 7901;Chaine anti derive detendu à remplacer ;Usure;escalier;2025.0;242.83333333333334;10.118055555555555;7901.0
-25/02/2025;14:30;15/04/2025;;D;Laennec;Esc 7301;Jeux entre maches et plinthes 9mm;CR DEKRA;escalier;2025.0;;;7301.0
-26/02/2025;08:00;27/02/2025;16:00;D;Gare de Vénissieux ;Esc. 7003;Contact de peigne NOK;Panne;escalier;2025.0;32.0;1.3333333333333333;7003.0
-26/02/2025;09:15;28/02/2025;15:56;D;Garibaldi;Esc. 7704;AFFAISSEMENT DE MARCHE;Panne;escalier;2025.0;54.68333333333333;2.2784722222222222;7704.0
-26/02/2025;18:45;01/03/2025;18:40;T4;Manufacture;Esc. 9701;Ne demarre pas à distance pb DP;Panne;escalier;2025.0;71.91666666666667;2.996527777777778;9701.0
-;;;;;;;;;;;;;
-;;;;;;;                                                                    ;;;;;;
+en cours d' expertise ";Panne;ascenseur;2025;177.93333333333334;7.413888888888889;842.0
+11/02/2025;09:53;18/02/2025;11:00;T4;Manufacture;Esc. 9701;Cellule Dp NOK ;Panne;escalier;2025;169.11666666666667;7.046527777777778;9701.0
+11/02/2025;13:25;31/03/2025;;D;Bellecour;Esc. 2601;MC HS+ Nervure HS + Piste galet de marches HS;CR DEKRA;escalier;2025;;;2601.0
+11/02/2025;15:49;31/03/2025;;D;Bellecour;Esc. 2606;MC HS + Guide de mc HS + ;CR DEKRA;escalier;2025;;;2606.0
+12/02/2025;12:37;13/02/2025;16:33;B;Part Dieu ;Esc. 4208 ;Nez de marche cassé;Mauvaise utilisation;escalier;2025;27.933333333333334;1.163888888888889;4208.0
+12/02/2025;11:34;16/02/2025;11:44;D;Saxe gambetta ;Asc. 443 ;Contact fin de course haut HS ;CR DEKRA;ascenseur;2025;96.16666666666667;4.006944444444445;443.0
+12/02/2025;18:38;25/03/2025;;A;Charpennes ;Asc. 212;Oxydation cables de levage + poulie d'adherence HS ;Usure;ascenseur;2025;;;212.0
+12/02/2025;23:10;15/02/2025;14:40;D;Valmy;Esc. 8301;Defaut peigne - contact NOK;Panne;escalier;2025;63.5;2.6458333333333335;8301.0
+13/02/2025;11:05;13/03/2025;16:00;B;Part Dieu ;Asc. 422;Oxydation cables de levage + poulie d'adherence HS ;Usure;ascenseur;2025;676.9166666666666;28.20486111111111;422.0
+13/02/2025;15:47;17/02/2025;15:40;D;Grange Blanche;Asc. 743;Galet de serrure HS + porte bloquée n-1;Usure;ascenseur;2025;95.88333333333334;3.995138888888889;743.0
+13/02/2025;22:05;17/02/2025;21:35;A;Cordeliers;Asc. 252;VF HS;Usure;ascenseur;2025;95.5;3.9791666666666665;252.0
+14/02/2025;17:59;17/02/2025;10:00;B;Part Dieu ;Esc. 4208 ;Defaut rupture de chaine + Frein bloquant ;Panne;escalier;2025;64.01666666666667;2.667361111111111;4208.0
+15/02/2025;17:30;20/02/2025;14:00;D;Gare de Vénissieux ;Esc. 7003;Defaut plaque porte peigne + Affaissement ;Usure;escalier;2025;116.5;4.854166666666667;7003.0
+20/02/2025;23:20;06/04/2025;;B;Jean jaurés ;Asc. 462;Cellule porte HS + cable NOK + guide de chape et fixation tordeus ;;ascenseur;2025;;;462.0
+21/02/2025;09:30;23/02/2025;12:26;A;Charpennes ;Esc. 2101;GALET DE MARCHE BAS DROIT HS;Usure;escalier;2025;50.93333333333333;2.1222222222222222;2101.0
+21/02/2025;17:21;03/03/2025;16:00;B;Oullins Centre ;Asc. 513;PROBLEME PORTE NIVEAU RUE;Panne;ascenseur;2025;238.65;9.94375;513.0
+22/02/2025;;17/03/2025;05:50;F;Fourvière;Asc. 911;Travaux de maintenance annuelle du funiculaire ;;ascenseur;2025;;;911.0
+22/02/2025;11:55;31/03/2025;;D;Gare de Vénissieux ;Esc. 7001;DEFAUT MOTEUR + HUILE;Panne;escalier;2025;;;7001.0
+23/02/2025;12:00;05/03/2025;14:50;D;Guillotière;Esc 7901;Chaine anti derive detendu à remplacer ;Usure;escalier;2025;242.83333333333334;10.118055555555555;7901.0
+25/02/2025;14:30;15/04/2025;;D;Laennec;Esc 7301;Jeux entre maches et plinthes 9mm;CR DEKRA;escalier;2025;;;7301.0
+26/02/2025;08:00;27/02/2025;16:00;D;Gare de Vénissieux ;Esc. 7003;Contact de peigne NOK;Panne;escalier;2025;32.0;1.3333333333333333;7003.0
+26/02/2025;09:15;28/02/2025;15:56;D;Garibaldi;Esc. 7704;AFFAISSEMENT DE MARCHE;Panne;escalier;2025;54.68333333333333;2.2784722222222222;7704.0
+26/02/2025;18:45;01/03/2025;18:40;T4;Manufacture;Esc. 9701;Ne demarre pas à distance pb DP;Panne;escalier;2025;71.91666666666667;2.996527777777778;9701.0
