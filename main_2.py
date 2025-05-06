@@ -21,101 +21,17 @@ from nltk.corpus import stopwords
 
 # %% Load data
 file_path = os.path.join(
-    os.getcwd(), "points_marquants", "Points marquants maintenance 2024.xlsx"
+    os.getcwd(), "points_marquants", "points_marquants_fusionnes_20250506_143928.csv"
 )
 if not os.path.exists(file_path):
     st.error(f"File not found: {file_path}")
     st.stop()
-df = pd.read_excel(file_path)
+df = pd.read_csv(file_path, sep=";")
 
 # %% Manipulation données
-# Filtrer les colonnes
-df = df[
-    [
-        "DATE Début",
-        "HEURE Début",
-        "DATE Fin",
-        "HEURE Fin",
-        "Durée indispo (j) totale",
-        "LIGNE",
-        "STATION",
-        "N° EQUIP.",
-        "COMMENTAIRE",
-        "Motifs",
-    ]
-]
-
-df.rename(
-    columns={
-        "DATE Début": "date_debut_panne",
-        "HEURE Début": "heure_debut_panne",
-        "DATE Fin": "date_fin_panne",
-        "HEURE Fin": "heure_fin_panne",
-        "Durée indispo (j) totale": "nb_jours_indispo",
-        "LIGNE": "ligne",
-        "STATION": "station",
-        "N° EQUIP.": "num_equip",
-        "COMMENTAIRE": "commentaire",
-        "Motifs": "motifs",
-    },
-    inplace=True,
-)
-
-# Convertir les colonnes de date au format dd/mm/yyyy
-df["date_debut_panne"] = pd.to_datetime(df["date_debut_panne"]).dt.strftime("%d/%m/%Y")
-df["date_fin_panne"] = pd.to_datetime(df["date_fin_panne"]).dt.strftime("%d/%m/%Y")
-
-
-# Convertir les colonnes de temps au format HH:MM
-def convert_time_format(time_str):
-    if isinstance(time_str, str):
-        time_str = time_str.replace("h", ":").replace("H", ":")
-        if ":" in time_str and len(time_str.split(":")[1]) == 0:
-            time_str += "00"
-    return time_str
-
-
-df["heure_debut_panne"] = df["heure_debut_panne"].apply(convert_time_format)
-df["heure_fin_panne"] = df["heure_fin_panne"].apply(convert_time_format)
-
-# Créer colonne type_equipement
-df["type_equipement"] = (
-    df["num_equip"].str.startswith("Asc").map({True: "ascenseur", False: "escalier"})
-)
-
-# Créer une colonne annee_debut_panne
-df["annee_debut_panne"] = pd.to_datetime(
-    df["date_debut_panne"], format="%d/%m/%Y"
-).dt.year
-
-
-# Calculer la durée d'indisponibilité en heures et jours
-def calculate_duration(row):
-    try:
-        start = pd.to_datetime(
-            f"{row['date_debut_panne']} {row['heure_debut_panne']}",
-            format="%d/%m/%Y %H:%M",
-        )
-        end = pd.to_datetime(
-            f"{row['date_fin_panne']} {row['heure_fin_panne']}", format="%d/%m/%Y %H:%M"
-        )
-        duration = (end - start).total_seconds() / 3600  # Convertir en heures
-        return duration, duration / 24  # Retourner heures et jours
-    except Exception:
-        return None, None
-
-
-df[["duree_indispo", "jour_indispo"]] = df.apply(
-    calculate_duration, axis=1, result_type="expand"
-)
-
-# Replace 'T1 ' with 'T1' in the 'ligne' column
-df["ligne"] = df["ligne"].str.replace("T1 ", "T1", regex=False)
-
-# Extract integers from the 'num_equip' column and create a new column 'id'
-df["id"] = (
-    df["num_equip"].str.extract(r"(\d+)").astype(float)
-)  # Use raw string for regex
+# # Convertir les colonnes de date au format dd/mm/yyyy
+# df["date_debut_panne"] = pd.to_datetime(df["date_debut_panne"]).dt.strftime("%d/%m/%Y")
+# df["date_fin_panne"] = pd.to_datetime(df["date_fin_panne"]).dt.strftime("%d/%m/%Y")
 
 # %% Streamlit app
 # Page configuration
@@ -1168,7 +1084,6 @@ if options == "Croisement données":
     option = st.selectbox(
         "Sélectionnez les lignes à afficher",
         df_merged_filtered["ligne_x"].unique(),  # Use unique values from 'ligne_x'
-        index=4,  # Default selection (first option)
     )
 
     df_merged_filtered = df_merged_filtered[df_merged_filtered["ligne_x"] == option]
@@ -1363,7 +1278,9 @@ if options == "Classification non supervisée":
 
     # 1. Charger les données
     try:
-        df = pd.read_csv("points_marquants/points_marquants_24_clean.csv", sep=";")
+        df = pd.read_csv(
+            "points_marquants/points_marquants_fusionnes_20250506_143928.csv", sep=";"
+        )
         descriptions = df["commentaire"].dropna().tolist()
     except FileNotFoundError:
         print("Erreur: Le fichier n'a pas été trouvé.")
