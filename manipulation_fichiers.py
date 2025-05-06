@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import logging
+from datetime import datetime
 
 # --- Configuration ---
 # Setup basic logging
@@ -280,6 +281,7 @@ for file_info in files_to_process:
 # Select the relevant dataframes for merging
 dfs_to_merge = []
 keys_to_merge = [
+    "points_marquants_24_clean",
     "points_marquants_janv_25_clean",
     "points_marquants_fev_25_clean",
     "points_marquants_mars_25_clean",
@@ -344,12 +346,15 @@ final_df["date_fin_panne"] = (
 print("\n--- Final Merged DataFrame (Most Recent Entries) ---")
 print(final_df)
 
+# Generate a timestamp for the file name
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
 # Save the final merged result
 try:
-    final_output_filename = "points_marquants_2025_fusionnes_recent.csv"
+    final_output_filename = f"points_marquants_fusionnes_{timestamp}.csv"
     final_output_path = os.path.join(
-        os.getcwd(), final_output_filename
-    )  # Save in current dir
+        folder_path, final_output_filename
+    )  # Save in points_marquants folder
     final_df.to_csv(final_output_path, index=False, sep=";", encoding="utf-8-sig")
     logging.info(f"Final merged data saved to: {final_output_path}")
 except Exception as e:
