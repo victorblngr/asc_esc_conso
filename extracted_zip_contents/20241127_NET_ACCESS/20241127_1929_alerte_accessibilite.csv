@@ -1,0 +1,33 @@
+Date màj;Code lieu;Code station;Nom station;Code équipement;Type équipement;Equipement;Début indispo;Cause;Conséquence;Fin indispo
+2024-11-27 19:29:00;5102;21;Charpennes;213;ASCENSEUR;du quai direction St-Genis-Laval Hôpital Lyon Sud, correspondance ligne A direction Perrache par le couloir de liaison, accès Place Charles Hernu.;2024-10-03;Panne;Accès direct ligne B direction Gare d'Oullins impossible. Emprunter l'ascenseur numéro 211 de la ligne A quai direction Perrache et revenir par le couloir de liaison;2024-11-29 08:30:00
+2024-11-27 19:29:00;5220;47;Debourg;4702;ESCALIER;du quai direction Charpennes jusqu'à la sortie avenue Jean Jaures;2024-11-12;Panne;.;2025-01-15 21:30:00
+2024-11-27 19:29:00;5904;50;Gare d'Oullins;503;ASCENSEUR;correspondance entre la mezzanine et la rue côté Quai 1;2024-11-27;Panne;Accès à la station et accès SNCF impossibles;2024-11-27 20:30:00
+2024-11-27 19:29:00;5520;42;Gare Part-Dieu V.Merle;4210;ESCALIER;de la sortie de la gare de la Part Dieu jusqu'à la mezzanine niveau Point Contact (par couloir de liaison);2024-10-28;Panne;.;2024-11-30 10:30:00
+2024-11-27 19:29:00;5160;45;Jean Macé;4502;ESCALIER;Place Jean Macé face, à la rue Professeur Grignard;2024-09-18;Panne;.;2024-12-10 23:30:00
+2024-11-27 19:29:00;5936;51;Oullins Centre;513;ASCENSEUR;entre la mezzanine supérieure et la place Anatole France;2024-11-07;Entretien programmé;connexion impossible entre la mezzanine supérieure et la place Anatole France, et correspondance impossible avec les ascenseurs reliant les quais et la mezzanine supérieure;2024-12-22 12:00:00
+2024-11-27 19:29:00;5043;43;Place Guichard;431;ASCENSEUR;direction St-Genis-Laval Hôpital Lyon Sud et accès place Guichard;2024-11-27;Accès fermé pour travaux;Accès impossible direction Gare d'Oullins;2024-11-27 21:30:00
+2024-11-27 19:29:00;5043;43;Place Guichard;4301;ESCALIER;du quai 1 direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la sortie Bourse du Travail, rue de Créqui.;2024-11-23;Panne;.;2024-11-28 16:30:00
+2024-11-27 19:29:00;5221;46;Place Jean Jaurès;461;ASCENSEUR;direction St-Genis-Laval Hôpital Lyon Sud et accès avenue Jean Jaurès;2024-11-25;Panne;Accès impossible direction Gare d'Oullins;2024-12-10 11:00:00
+2024-11-27 19:29:00;5221;46;Place Jean Jaurès;4601;ESCALIER;du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la sortie avenue Jean Jaures;2024-10-09;Panne;.;2024-12-16 21:00:00
+2024-11-27 19:29:00;5221;46;Place Jean Jaurès;4602;ESCALIER;du quai direction Charpennes jusqu'à la sortie avenue Jean Jaures;2024-11-02;Panne;.;2025-01-30 22:30:00
+2024-11-27 19:29:00;5200;48;Stade de Gerland Le LOU;4802;ESCALIER;de la mezzanine niveau Point Contact jusqu'au quai direction Charpennes;2024-10-23;Panne;.;2025-01-30 11:30:00
+2024-11-27 19:29:00;5200;48;Stade de Gerland Le LOU;4803;ESCALIER;de la mezzanine niveau Point Contact jusqu'à la sortie avenue Jean Jaurès;2024-11-04;Panne;.;2024-12-16 14:00:00
+2024-11-27 19:29:00;5002;26;Bellecour;2612;ESCALIER;du quai direction Vaulx-en-Velin La Soie jusqu'à la sortie place Bellecour;2024-07-25;Panne;.;2024-12-29 14:30:00
+2024-11-27 19:29:00;5103;84;Gare de Vaise;844;ASCENSEUR;direction Gare de Vénissieux, accès Gare Routière ou Parc Relais;2024-11-19;Vandalisme;.;2024-12-19 16:30:00
+2024-11-27 19:29:00;5181;77;Garibaldi;7702;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la mezzanine;2024-11-17;Entretien programmé;.;2024-12-15 17:00:00
+2024-11-27 19:29:00;5040;82;Gorge de Loup;821;ASCENSEUR;direction Gare de Vaise, accès Gare Routière ou Parc Relais;2024-11-27;Panne;Accès impossible direction Gare de Vaise.;2024-11-27 21:30:00
+2024-11-27 19:29:00;5041;74;Grange Blanche;7406;ESCALIER;de la mezzanine jusqu'à la sortie place d' Arsonval (départ bus);2024-09-06;Entretien programmé;.;2024-12-12 10:30:00
+2024-11-27 19:29:00;5044;79;Guillotière Gabriel Péri;7902;ESCALIER;de la mezzanine (côté quai direction Gare de Vénissieux) jusqu'à la sortie cours Gambetta;2024-11-27;Panne;.;2024-11-28 16:30:00
+2024-11-27 19:29:00;5044;79;Guillotière Gabriel Péri;7904;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la mezzanine;2024-11-25;Panne;.;2025-01-01 07:30:00
+2024-11-27 19:29:00;5062;73;Laennec;731;ASCENSEUR;direction Gare de Vaise, accès rue Guillaume Paradin;2024-11-27;Panne;Accès impossible direction Gare de Vaise.;2024-11-27 21:00:00
+2024-11-27 19:29:00;5062;73;Laennec;7301;ESCALIER;du quai direction Gare de Vaise jusqu'à la sortie rue Guillaume Paradin;2024-11-27;Entretien programmé;.;2024-11-28 09:00:00
+2024-11-27 19:29:00;5095;81;Vieux Lyon;8107;ESCALIER;de la mezzanine niveau -3 (correspondance ligne D direction Gare de Vaise ou Gare de Vénissieux) jusqu'à la mezzanine niveau Point Contact, accès rue du Doyenné.;2023-12-30;Panne;.;2024-12-31 22:00:00
+2024-11-27 19:29:00;5046;24;Hôtel de Ville L. Pradel;241;ASCENSEUR;direction Perrache, correspondance avec la ligne C direction Cuire et accès Opéra;2024-11-27;Panne;Direction Perrache, prendre l'autre ascenseur et passer par la C;2024-12-03 17:00:00
+2024-11-27 19:29:00;5046;24;Hôtel de Ville L. Pradel;2402;ESCALIER;du quai de descente ligne C jusqu'au quai ligne A direction Perrache;2024-11-27;Entretien programmé;.;2024-11-29 13:30:00
+2024-11-27 19:29:00;5906;97;Manufacture Montluc;9701;ESCALIER;Liaison entre les quais d'arrivée et de départ;2024-11-27;Vandalisme;. ;2024-11-27 21:30:00
+2024-11-27 19:29:00;5024;18;Flachet;1802;ESCALIER;du quai direction Vaulx-en-Velin La Soie jusqu'à la sortie cours Emile Zola;2024-11-27;Accès fermé pour travaux;.;2024-11-27 21:30:00
+2024-11-27 19:29:00;5182;23;Foch;231;ASCENSEUR;direction Perrache et accès Franklin Roosevelt;2024-11-26;Entretien programmé;Accès impossible direction Perrache;2024-12-06 16:00:00
+2024-11-27 19:29:00;5182;23;Foch;2301;ESCALIER;du quai direction Perrache jusqu'à la sortie angle cours Franklin Roosevelt / avenue du Maréchal de Saxe;2024-11-27;Accès fermé pour travaux;.;2024-11-27 21:30:00
+2024-11-27 19:29:00;5101;16;Laurent Bonnevay;1602;ESCALIER;de la passerelle piéton, venant de la gare routière bus, jusqu'à la mezzanine piéton;2024-11-27;Accès fermé pour travaux;.;2024-11-27 20:00:00
+2024-11-27 19:29:00;5081;22;Masséna;221;ASCENSEUR;direction Perrache et accès cours Vitton;2024-11-05;Panne;Accès impossible direction Perrache;2025-01-01 12:30:00
+2024-11-27 19:29:00;5080;92;Minimes Théatres Romains;923;ASCENSEUR;direction Saint-Just ou Vieux Lyon, accès rue de l'Antiquaille;2024-11-26;Panne;Accès station impossible;2024-11-30 07:30:00

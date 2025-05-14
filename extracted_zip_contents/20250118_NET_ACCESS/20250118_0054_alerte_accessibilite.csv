@@ -1,0 +1,41 @@
+Date màj;Code lieu;Code station;Nom station;Code équipement;Type équipement;Equipement;Début indispo;Cause;Conséquence;Fin indispo
+2025-01-18 00:54:00;5102;21;Charpennes;2101;ESCALIER;du quai direction Perrache ou direction St-Genis-Laval Hôpital Lyon Sud par le couloir de liaison jusqu'à la sortie Place Charles Hernu;2025-01-11;Panne;.;2025-02-13 23:30:00
+2025-01-18 00:54:00;5102;21;Charpennes;2103;ESCALIER;du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la place Charles Hernu;2025-01-13;Panne;.;2025-01-18 20:30:00
+2025-01-18 00:54:00;5220;47;Debourg;472;ASCENSEUR;direction Charpennes et accès avenue Jean Jaurès;2024-12-31;Panne; Accès impossible direction Charpennes;2025-02-01 21:30:00
+2025-01-18 00:54:00;5220;47;Debourg;4701;ESCALIER;du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la sortie avenue Jean Jaures;2025-01-14;Panne;.;2025-01-18 14:30:00
+2025-01-18 00:54:00;5220;47;Debourg;4702;ESCALIER;du quai direction Charpennes jusqu'à la sortie avenue Jean Jaures;2024-11-12;Panne;.;2025-02-01 07:30:00
+2025-01-18 00:54:00;5520;42;Gare Part-Dieu V.Merle;4205;ESCALIER;du quai direction St-Genis-Laval Hôpital Lyon Sud (par couloir de liaison direction gare de la Part Dieu) jusqu'à la mezzanine niveau Point Contact.;2025-01-09;Panne;.;2025-03-11 00:00:00
+2025-01-18 00:54:00;5936;51;Oullins Centre;513;ASCENSEUR;entre la mezzanine supérieure et la place Anatole France;2024-11-07;Entretien programmé;connexion impossible entre la mezzanine supérieure et la place Anatole France, et correspondance impossible avec les ascenseurs reliant les quais et la mezzanine supérieure;2025-02-04 12:00:00
+2025-01-18 00:54:00;5043;43;Place Guichard;431;ASCENSEUR;direction St-Genis-Laval Hôpital Lyon Sud et accès place Guichard;2024-12-24;Panne;Accès impossible direction Gare d'Oullins;2025-02-28 23:30:00
+2025-01-18 00:54:00;5221;46;Place Jean Jaurès;4601;ESCALIER;du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la sortie avenue Jean Jaures;2024-10-09;Panne;.;2025-01-31 21:00:00
+2025-01-18 00:54:00;5221;46;Place Jean Jaurès;4602;ESCALIER;du quai direction Charpennes jusqu'à la sortie avenue Jean Jaures;2024-11-02;Panne;.;2025-01-31 22:30:00
+2025-01-18 00:54:00;5092;44;Saxe - Gambetta;443;ASCENSEUR;direction Gare de Vénissieux, correspondance Ligne B direction Charpennes ou St-Genis-Laval Hôpital Lyon Sud, accès place Victor Basch;2025-01-17;Panne;Ligne B inaccessible.  Ligne D direction Gare de Vaise inaccessible. Correspondance impossible ligne B direction Gare d'Oullins et ligne D direction Gare de Vénissieux.;2025-01-20 17:30:00
+2025-01-18 00:54:00;5200;48;Stade de Gerland Le LOU;4802;ESCALIER;de la mezzanine niveau Point Contact jusqu'au quai direction Charpennes;2024-10-23;Panne;.;2025-01-31 11:30:00
+2025-01-18 00:54:00;5937;52;St-Genis Hôp. Lyon Sud;5204;ESCALIER;entre la mezzanine et la surface;2025-01-17;Panne;emprunter l'autre escalier mécanique si disponible (escalier n°5203 entre la mezzanine et la surface), ou utiliser les ascenseurs reliant les quais et la surface si disponibles;2025-01-18 15:00:00
+2025-01-18 00:54:00;5002;26;Bellecour;264;ASCENSEUR;direction Vaulx-en-Velin La Soie, accès rue de la République;2025-01-13;Panne;Pour accès et correspondances métros A et D, utiliser les autres ascenseurs en passant par la surface;2025-01-18 23:30:00
+2025-01-18 00:54:00;5002;26;Bellecour;2607;ESCALIER;du quai central jusqu'à la mezzanine sud (côté Antonin Poncet);2025-01-10;Entretien programmé;.;2025-01-25 07:30:00
+2025-01-18 00:54:00;5104;70;Gare de Vénissieux;7003;ESCALIER;de la mezzanine vers la passerelle SNCF;2025-01-05;Panne;.;2025-02-06 11:30:00
+2025-01-18 00:54:00;5181;77;Garibaldi;7702;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la mezzanine;2024-11-17;Entretien programmé;.;2025-01-25 20:30:00
+2025-01-18 00:54:00;5181;77;Garibaldi;7704;ESCALIER;de la mezzanine jusqu'à la sortie cours Gambetta;2025-01-02;Entretien programmé;.;2025-01-30 18:00:00
+2025-01-18 00:54:00;5040;82;Gorge de Loup;821;ASCENSEUR;direction Gare de Vaise, accès Gare Routière ou Parc Relais;2025-01-02;Panne;Accès impossible direction Gare de Vaise.;2025-01-30 20:30:00
+2025-01-18 00:54:00;5040;82;Gorge de Loup;8205;ESCALIER;sortie Place Basse (côté agence commerciale) niveau Parc Relais, jusqu'à la mezzanine niveau départ gare de bus, rue Sergent Michel Berthet;2024-12-12;Panne;.;2025-01-30 15:00:00
+2025-01-18 00:54:00;5041;74;Grange Blanche;7401;ESCALIER;de place d'Arsonval (descente de bus) jusqu'à la mezzanine face à la croissanterie;2024-12-16;Entretien programmé;.;2025-01-30 16:30:00
+2025-01-18 00:54:00;5041;74;Grange Blanche;7402;ESCALIER;de la mezzanine côté hôpital Edouard Herriot jusqu'à la sortie Hôpital Edouard Herriot;2024-12-13;Panne;.;2025-01-31 07:30:00
+2025-01-18 00:54:00;5041;74;Grange Blanche;7406;ESCALIER;de la mezzanine jusqu'à la sortie place d' Arsonval (départ bus);2024-09-06;Entretien programmé;.;2025-01-30 16:30:00
+2025-01-18 00:54:00;5044;79;Guillotière Gabriel Péri;7901;ESCALIER;de la mezzanine (côté quai direction Gare de Vaise) jusqu'à la sortie cours Gambetta;2025-01-14;Panne;.;2025-01-30 17:00:00
+2025-01-18 00:54:00;5044;79;Guillotière Gabriel Péri;7902;ESCALIER;de la mezzanine (côté quai direction Gare de Vénissieux) jusqu'à la sortie cours Gambetta;2024-12-12;Entretien programmé;.;2025-01-30 15:30:00
+2025-01-18 00:54:00;5044;79;Guillotière Gabriel Péri;7904;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la mezzanine;2025-01-17;Panne;.;2025-01-18 03:00:00
+2025-01-18 00:54:00;5062;73;Laennec;7302;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la sortie rue Guillaume Paradin;2024-12-11;Entretien programmé;.;2025-01-30 11:00:00
+2025-01-18 00:54:00;5082;72;Mermoz - Pinel;7201;ESCALIER;du quai direction Gare de Vaise jusqu'à la mezzanine;2024-12-13;Entretien programmé;.;2025-01-20 13:00:00
+2025-01-18 00:54:00;5083;75;Monplaisir Lumière;7501;ESCALIER;du quai direction Gare de Vaise jusqu'à la sortie place Ambroise Courtois;2024-12-16;Entretien programmé;.;2025-01-30 18:30:00
+2025-01-18 00:54:00;5083;75;Monplaisir Lumière;7502;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la sortie cours Albert Thomas;2025-01-13;Entretien programmé;.;2025-01-30 09:30:00
+2025-01-18 00:54:00;5091;76;Sans Souci;7601;ESCALIER;du quai direction gare de Vaise jusqu'à la sortie rue des Tuiliers / cours Albert Thomas;2024-12-17;Entretien programmé;.;2025-01-30 15:30:00
+2025-01-18 00:54:00;5091;76;Sans Souci;7602;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la sortie cours Albert Thomas;2024-12-17;Panne;.;2025-01-31 19:00:00
+2025-01-18 00:54:00;5095;81;Vieux Lyon;8107;ESCALIER;de la mezzanine niveau -3 (correspondance ligne D direction Gare de Vaise ou Gare de Vénissieux) jusqu'à la mezzanine niveau Point Contact, accès rue du Doyenné.;2024-12-07;Panne;.;2025-02-28 15:00:00
+2025-01-18 00:54:00;5223;57;Croix-Rousse;572;ASCENSEUR;direction Hôtel de Ville, correspondance avec le quai direction Cuire;2025-01-16;Vandalisme;Accès ligne C direction Hôtel de Ville impossible;2025-01-23 20:30:00
+2025-01-18 00:54:00;5906;97;Manufacture Montluc;9701;ESCALIER;Liaison entre les quais d'arrivée et de départ;2025-01-17;Panne;. ;2025-01-18 03:00:00
+2025-01-18 00:54:00;5000;27;Ampère Victor Hugo;2702;ESCALIER;du quai direction Vaulx-en-Velin La Soie  jusqu'à la sortie rue Victor HUGO;2025-01-13;Panne;.;2025-01-18 23:30:00
+2025-01-18 00:54:00;5042;19;Gratte Ciel;191;ASCENSEUR;du quai direction Perrache, accès cours Emile Zola;2024-12-29;Panne;Accès impossible direction Perrache;2025-01-31 16:30:00
+2025-01-18 00:54:00;5081;22;Masséna;222;ASCENSEUR;direction Vaulx-en-Velin La Soie et accès cours Vitton;2025-01-14;Panne;Accès impossible direction Vaulx-en-Velin La Soie;2025-01-18 18:00:00
+2025-01-18 00:54:00;5564;15;Vaulx-en-Velin La Soie;151;ASCENSEUR;du quai direction Perrache, correspondance avec la Gare Routière;2025-01-17;Panne;Accès impossible au quai de départ direction Perrache;2025-01-18 03:00:00
+2025-01-18 00:54:00;5564;15;Vaulx-en-Velin La Soie;152;ASCENSEUR;correspondance entre le quai d'arrivée et la Gare Routière;2025-01-17;Panne;Accès impossible à la Gare Routière;2025-01-18 03:00:00

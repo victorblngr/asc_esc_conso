@@ -1,0 +1,45 @@
+Date màj;Code lieu;Code station;Nom station;Code équipement;Type équipement;Equipement;Début indispo;Cause;Conséquence;Fin indispo
+2025-04-01 11:39:00;5102;21;Charpennes;2102;ESCALIER;du quai direction Vaulx-en-Velin La Soie jusqu'à la sortie angle cours Emile Zola / rue des Emeraudes;2025-04-01;Panne;.;2025-04-01 12:30:00
+2025-04-01 11:39:00;5220;47;Debourg;472;ASCENSEUR;direction Charpennes et accès avenue Jean Jaurès;2025-03-31;Panne; Accès impossible direction Charpennes;2025-04-01 14:30:00
+2025-04-01 11:39:00;5220;47;Debourg;4701;ESCALIER;du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la sortie avenue Jean Jaures;2025-01-21;Panne;.;2025-05-30 17:30:00
+2025-04-01 11:39:00;5220;47;Debourg;4702;ESCALIER;du quai direction Charpennes jusqu'à la sortie avenue Jean Jaures;2025-03-26;Panne;.;2025-04-15 14:30:00
+2025-04-01 11:39:00;5520;42;Gare Part-Dieu V.Merle;4210;ESCALIER;de la sortie de la gare de la Part Dieu jusqu'à la mezzanine niveau Point Contact (par couloir de liaison);2025-03-27;Panne;.;2025-04-25 17:30:00
+2025-04-01 11:39:00;5160;45;Jean Macé;4501;ESCALIER;du quai direction St-Genis-Laval Hôpital Lyon Sud jusqu'à la sortie place Jean Macé (côté rue Parmentier);2025-03-20;Panne;.;2025-05-20 17:30:00
+2025-04-01 11:39:00;5221;46;Place Jean Jaurès;462;ASCENSEUR;direction Charpennes et accès avenue Jean Jaurès;2025-03-25;Panne; Accès impossible direction Charpennes;2025-04-30 17:30:00
+2025-04-01 11:39:00;5221;46;Place Jean Jaurès;4602;ESCALIER;du quai direction Charpennes jusqu'à la sortie avenue Jean Jaures;2025-03-25;Panne;.;2025-04-10 17:30:00
+2025-04-01 11:39:00;5092;44;Saxe - Gambetta;4406;ESCALIER;de la mezzanine sud  jusqu'à la sortie avenue Jean Jaurès;2025-04-01;Vandalisme;.;2025-04-01 13:30:00
+2025-04-01 11:39:00;5092;44;Saxe - Gambetta;4410;ESCALIER;du quai ligne B direction Charpennes (par by pass) jusqu'au quai  ligne D direction Gare de Vénissieux;2025-04-01;Panne;.;2025-04-01 14:00:00
+2025-04-01 11:39:00;5200;48;Stade de Gerland Le LOU;4802;ESCALIER;de la mezzanine niveau Point Contact jusqu'au quai direction Charpennes;2025-03-02;Panne;.;2025-04-30 17:30:00
+2025-04-01 11:39:00;5200;48;Stade de Gerland Le LOU;4803;ESCALIER;de la mezzanine niveau Point Contact jusqu'à la sortie avenue Jean Jaurès;2025-03-31;Panne;.;2025-04-03 14:30:00
+2025-04-01 11:39:00;5002;26;Bellecour;2601;ESCALIER;du quai direction Vaulx-en-Velin La Soie jusqu'à la sortie place Bellecour;2025-02-11;Panne;.;2025-04-30 19:30:00
+2025-04-01 11:39:00;5002;26;Bellecour;2608;ESCALIER;de la mezzanine sud (côté Antonin Poncet) jusqu'à la sortie place Antonin Poncet (face à la Poste);2025-02-11;Entretien programmé;.;2025-04-30 11:00:00
+2025-04-01 11:39:00;5002;26;Bellecour;2606;ESCALIER;du quai central jusqu'à la mezzanine sud (côté Antonin Poncet);2025-02-11;Panne;.;2025-04-30 19:30:00
+2025-04-01 11:39:00;5002;26;Bellecour;2603;ESCALIER;du by-pass de correspondance ligne D / ligne A jusqu'au quai ligne A direction Vaulx-en-Velin La Soie;2025-02-05;Entretien programmé;.;2025-04-30 15:30:00
+2025-04-01 11:39:00;5104;70;Gare de Vénissieux;7002;ESCALIER;du quai d'arrivée vers la mezzanine;2025-03-30;Panne;.;2025-04-15 03:00:00
+2025-04-01 11:39:00;5181;77;Garibaldi;7701;ESCALIER;du quai direction Gare de Vaise jusqu'à la mezzanine;2025-02-05;Panne;.;2025-04-30 14:30:00
+2025-04-01 11:39:00;5181;77;Garibaldi;7702;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la mezzanine;2024-11-17;Entretien programmé;.;2025-05-31 20:30:00
+2025-04-01 11:39:00;5040;82;Gorge de Loup;822;ASCENSEUR;direction Gare de Vénissieux, correspondance quai direction Gare de Vaise, accès Gare Routière ou Gare SNCF et rue Sergent Michel Berthet;2025-03-28;Entretien programmé;Accès impossible direction Gare de Vénissieux;2025-04-06 16:30:00
+2025-04-01 11:39:00;5040;82;Gorge de Loup;8202;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la mezzanine sud (côté agence commerciale), niveau Parc Relais;2025-04-01;Panne;.;2025-04-01 13:30:00
+2025-04-01 11:39:00;5040;82;Gorge de Loup;8205;ESCALIER;sortie Place Basse (côté agence commerciale) niveau Parc Relais, jusqu'à la mezzanine niveau départ gare de bus, rue Sergent Michel Berthet;2025-03-21;Panne;.;2025-05-10 10:30:00
+2025-04-01 11:39:00;5041;74;Grange Blanche;7401;ESCALIER;de place d'Arsonval (descente de bus) jusqu'à la mezzanine face à la croissanterie;2025-03-18;Entretien programmé;.;2025-04-13 16:00:00
+2025-04-01 11:39:00;5041;74;Grange Blanche;7402;ESCALIER;de la mezzanine côté hôpital Edouard Herriot jusqu'à la sortie Hôpital Edouard Herriot;2024-12-13;Panne;.;2025-05-30 07:30:00
+2025-04-01 11:39:00;5041;74;Grange Blanche;7406;ESCALIER;de la mezzanine jusqu'à la sortie place d' Arsonval (départ bus);2024-09-06;Entretien programmé;.;2025-04-05 16:30:00
+2025-04-01 11:39:00;5044;79;Guillotière Gabriel Péri;7903;ESCALIER;du quai direction Gare de Vaise jusqu'à la mezzanine;2025-03-25;Panne;.;2025-04-13 19:00:00
+2025-04-01 11:39:00;5044;79;Guillotière Gabriel Péri;7902;ESCALIER;de la mezzanine (côté quai direction Gare de Vénissieux) jusqu'à la sortie cours Gambetta;2025-04-01;Vandalisme;.;2025-04-01 13:30:00
+2025-04-01 11:39:00;5044;79;Guillotière Gabriel Péri;7904;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la mezzanine;2025-03-27;Panne;.;2025-04-13 15:30:00
+2025-04-01 11:39:00;5062;73;Laennec;7301;ESCALIER;du quai direction Gare de Vaise jusqu'à la sortie rue Guillaume Paradin;2025-02-25;Entretien programmé;.;2025-05-15 19:30:00
+2025-04-01 11:39:00;5062;73;Laennec;7302;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la sortie rue Guillaume Paradin;2024-12-11;Entretien programmé;.;2025-04-15 11:00:00
+2025-04-01 11:39:00;5083;75;Monplaisir Lumière;7502;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la sortie cours Albert Thomas;2025-01-13;Entretien programmé;.;2025-05-30 09:30:00
+2025-04-01 11:39:00;5084;71;Parilly;7101;ESCALIER;du quai direction Gare de Vaise jusqu'à la sortie rue de La Fontaine;2025-04-01;Accès fermé pour travaux;.;2025-04-01 14:00:00
+2025-04-01 11:39:00;5091;76;Sans Souci;7602;ESCALIER;du quai direction Gare de Vénissieux jusqu'à la sortie cours Albert Thomas;2024-12-17;Panne;.;2025-04-30 19:00:00
+2025-04-01 11:39:00;5094;83;Valmy;8302;ESCALIER;de la mezzanine jusqu'à la sortie place Valmy;2025-02-05;Panne;.;2025-05-31 12:30:00
+2025-04-01 11:39:00;5095;81;Vieux Lyon;8107;ESCALIER;de la mezzanine niveau -3 (correspondance ligne D direction Gare de Vaise ou Gare de Vénissieux) jusqu'à la mezzanine niveau Point Contact, accès rue du Doyenné.;2024-12-07;Panne;.;2025-04-15 15:00:00
+2025-04-01 11:39:00;5046;24;Hôtel de Ville L. Pradel;242;ASCENSEUR;direction Vaulx-en-Velin La Soie, correspondance ligne A / ligne C direction Cuire, accès Mairie Annexe;2025-03-22;Panne;Direction Vaulx-en-Velin La Soie, prendre l'autre ascenseur et passer par la ligne C;2025-04-13 17:30:00
+2025-04-01 11:39:00;5240;96;IUT Feyssine;961;ASCENSEUR;Liaison entre les quais arrivée et départ et le Boulevard Laurent Bonnevay;2025-04-01;Accès fermé pour travaux;Liaison impossible;2025-04-01 14:00:00
+2025-04-01 11:39:00;5000;27;Ampère Victor Hugo;272;ASCENSEUR;direction Vaulx-en-Velin La Soie;2025-03-31;Panne;Accès impossible direction Vaux-en-Velin La Soie;2025-04-01 14:30:00
+2025-04-01 11:39:00;5002;26;Bellecour;261;ASCENSEUR;direction Vaulx-en-Velin La Soie, correspondance ligne A direction Perrache et  ligne D, direction Gare de Vénissieux ou Gare de Vaise;2025-03-19;Panne;Pour correspondance ligne A direction Perrache et ligne D directions Gare de Vénissieux ou Gare de Vaise, utiliser les autres ascenseurs en passant par la surface;2025-04-30 14:30:00
+2025-04-01 11:39:00;5023;17;Cusset;171;ASCENSEUR;direction Perrache, accès mezzanine de correspondance direction Vaulx-en-Velin La Soie, accès cours Emile Zola;2025-03-31;Panne;Accès impossible direction Perrache.  Accès impossible cours Emile Zola .;2025-04-30 14:30:00
+2025-04-01 11:39:00;5024;18;Flachet;182;ASCENSEUR;direction Vaulx-en-Velin La Soie, accès cours Emile Zola;2025-02-03;Panne;Accès impossible direction Vaulx-en-Velin La Soie;2025-04-04 17:30:00
+2025-04-01 11:39:00;5101;16;Laurent Bonnevay;162;ASCENSEUR;du quai direction Vaulx-en-Velin La Soie, accès à la mezzanine;2025-04-01;Panne;Accès impossible au quai direction Vaulx-en-Velin La Soie;2025-04-01 12:00:00
+2025-04-01 11:39:00;5101;16;Laurent Bonnevay;169;ASCENSEUR;Parc Relais;2025-04-01;Panne;Accès aux différents niveaux impossible;2025-04-01 14:00:00
+2025-04-01 11:39:00;5080;92;Minimes Théatres Romains;923;ASCENSEUR;direction Saint-Just ou Vieux Lyon, accès rue de l'Antiquaille;2025-03-12;Vandalisme;Accès station impossible;2025-04-06 17:30:00
